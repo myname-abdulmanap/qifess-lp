@@ -1,0 +1,537 @@
+---
+interface Portfolio {
+  title: string;
+  description: string;
+  imageUrl: string;
+  category: string | string[];
+  tags: string[];
+  link: string;
+  github?: string;
+}
+
+const portfolioItems: Portfolio[] = [
+  {
+    title: "Personal Website",
+    description:
+      "SEO-optimized portfolio website with blog feature, built for maximum performance and responsiveness.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739874829/PERSONAL_WEBSITE_11zon_vrfcve.png",
+    category: "Web Development",
+    tags: ["Astro SSG", "Typescript", "Markdown", "Vanilla CSS"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739874829/PERSONAL_WEBSITE_11zon_vrfcve.png",
+    github: "https://github.com/myname-abdulmanap/abdulmanap.com",
+  },
+  {
+    title: "Presensi Karyawan Web App",
+    description:
+      "Employee attendance system featuring barcode scanning, leave requests, overtime tracking, and automated reporting.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739876771/Presensi_WEBSITE_11zon_az9kee.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "Bootstrap", "MySQL", "JQuery"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739876771/Presensi_WEBSITE_11zon_az9kee.png",
+    github: "https://github.com/myname-abdulmanap/presensi_karyawan",
+  },
+  {
+    title: "Automatic Scalping Trade",
+    description:
+      "High-frequency trading bot that executes rapid trades to profit from small market price movements.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739981641/bot-scalping_11zon_pkgjqe.png",
+    category: "App Development",
+    tags: ["Python", "Tkinter", "API Market"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739981641/bot-scalping_11zon_pkgjqe.png",
+    github: "https://github.com/myname-abdulmanap",
+  },
+  {
+    title: "Company Profile Online Shop",
+    description:
+      "Professional company website integrated with e-commerce functionality for seamless online shopping.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739957095/company-1_11zon_toc1su.png",
+    category: "Web Development",
+    tags: ["WordPress", "WooCommerce", "JQuery", "MySQL"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739957095/company-1_11zon_toc1su.png",
+    github: "https://github.com/myname-abdulmanap",
+  },
+  {
+    title: "PUSLAH - Perpustakaan Sekolah",
+    description:
+      "Digital library system for managing books, student records, and borrowing activities in schools.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739977764/PUSLAH-PERPUSTAKAANN-SEKOLAH_11zon_awjnmo.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "Tailwind CSS", "MySQL", "JQuery"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739977764/PUSLAH-PERPUSTAKAANN-SEKOLAH_11zon_awjnmo.png",
+    github:
+      "https://github.com/myname-abdulmanap/puslah-perpustakaan-sekolah-laravel10",
+  },
+  {
+    title: "News Portal Education",
+    description:
+      "Educational news portal delivering latest information using WordPress, MySQL, and jQuery for enhanced user experience.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739959674/edu-portal-naftrik.id_11zon_sg0t79.png",
+    category: "Web Development",
+    tags: ["WordPress", "MySQL", "JQuery"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739959674/edu-portal-naftrik.id_11zon_sg0t79.png",
+    github: "https://github.com/my-name-abdulmanap",
+  },
+  {
+    title: "Admin Dashboard Rumah Sakit",
+    description:
+      "Hospital management system for tracking patient records, medical staff, and operational processes.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739974575/admin-dashboard_11zon_uxpdcy.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "Vue JS", "Inertia JS", "Tailwind CSS"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739974575/admin-dashboard_11zon_uxpdcy.png",
+    github: "https://github.com/myname-abdulmanap/rumah-sakit-laravel11",
+  },
+  {
+    title: "Penggajian Sekolah Web App",
+    description:
+      "Automated school payroll system for efficient financial management and transparent accounting.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739979858/PENGGAJIAN-SEKOLAH_11zon_w4taca.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "JQuery", "MySQL", "Bootstrap"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739979858/PENGGAJIAN-SEKOLAH_11zon_w4taca.png",
+    github: "https://github.com/myname-abdulmanap/penggajian_laravel7",
+  },
+  {
+    title: "Arus Kas Sistem Rumah Sakit",
+    description:
+      "Real-time hospital financial tracking system for managing revenue, expenses, and transactions.",
+    imageUrl:
+      "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739976288/RumahSakitSistem_b2u45v.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "Blade", "MySQL", "Bootstrap"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739976288/RumahSakitSistem_b2u45v.png",
+    github: "https://github.com/myname-abdulmanap/rumah-sakit-laravel11",
+  },
+];
+
+const categories = [
+  "All",
+  ...new Set(portfolioItems.map((item) => item.category)),
+];
+
+const tagColors = [
+  { bg: "rgb(255, 228, 230)", text: "rgb(225, 29, 72)" },
+  { bg: "rgb(224, 242, 254)", text: "rgb(14, 165, 233)" },
+  { bg: "rgb(220, 252, 231)", text: "rgb(22, 163, 74)" },
+  { bg: "rgb(255, 237, 213)", text: "rgb(234, 88, 12)" },
+  { bg: "rgb(243, 232, 255)", text: "rgb(147, 51, 234)" },
+];
+
+function getTagColor(tagIndex: number) {
+  return tagColors[tagIndex % tagColors.length];
+}
+---
+
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Portfolio 💻</h2>
+      <p>Building Best Web Apps</p>
+    </div>
+
+    <div class="filter-tabs fade-in">
+      {
+        categories.map((category) => (
+          <button
+            class:list={["tab", { active: category === "All" }]}
+            data-category={category}
+          >
+            {category}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="portfolio-grid">
+      {
+        portfolioItems.map((item) => (
+          <article class="card" data-category={item.category}>
+            <div class="card-image">
+              <img src={item.imageUrl} alt={item.title} loading="lazy" />
+              <div class="card-overlay">
+                <div class="action-buttons">
+                  <a href={item.link} class="btn-view">
+                    View Project
+                  </a>
+                  {item.github && (
+                    <a
+                      href={item.github}
+                      class="btn-github"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub Repository"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div class="card-content fade-in">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <div class="tags">
+                {item.tags.map((tag, index) => (
+                  <span
+                    class="tag"
+                    style={`background-color: ${getTagColor(index).bg}; color: ${getTagColor(index).text};`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <br />
+    <div class="align-btn"><a href="/portfolio" target="_blank" class="btn">Explore More in Slide View</a>
+    </div>
+    <br />
+    <span class="descporto">
+      My portfolio is still incomplete, as I have many more projects to add. I'm
+      currently in the process of updating it, so stay tuned for more 🫶
+    </span>
+  </div>
+</section>
+
+<style>
+  .align-btn {
+    text-align: center;
+    align-items: center;
+  }
+
+  .descporto {
+    color: var(--text-color);
+    text-align: center;
+    align-items: center;
+    display: block;
+    font-size: 0.9rem;
+  }
+  .portfolio-section {
+    padding: 4rem 0;
+    background-color: var(--bg-color);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color);
+  }
+
+  .section-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+  }
+
+  .filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .tab {
+    padding: 0.5rem 1.25rem;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+
+  .tab:hover {
+    color: rgb(201, 176, 97);
+  }
+
+  .tab.active {
+    background: rgb(244, 230, 181);
+    color: #5c4f2c;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .card-image img {
+    transform: scale(1.05);
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-view {
+    padding: 0.75rem 1.5rem;
+    background: rgb(244, 230, 181);
+    color: #5c4f2c;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .btn-view:hover {
+    background: white;
+    color: rgb(201, 176, 97);
+  }
+
+  .btn-github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    color: #333;
+    transition: transform 0.2s ease;
+  }
+
+  .btn-github:hover {
+    transform: scale(1.1);
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    font-weight: 600;
+  }
+
+  .card-content p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    padding: 0.35rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+  }
+
+  .tag:hover {
+    transform: translateY(-2px);
+  }
+
+  .hidden {
+    display: none;
+  }
+  /* Tablet Breakpoint */
+  @media (max-width: 1024px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card-image {
+      height: 200px;
+    }
+  }
+
+  /* Mobile Breakpoint */
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .section-header p {
+      font-size: 1rem;
+    }
+
+    .portfolio-grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .card-image {
+      height: 120px;
+    }
+
+    .card-content {
+      padding: 0.75rem;
+    }
+
+    .card-content h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-content p {
+      font-size: 0.75rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .tag,
+    .btn-view,
+    .tab {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .btn-github {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  /* Small Mobile Breakpoint */
+  @media (max-width: 480px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .card-image {
+      height: 110px;
+    }
+
+    .card-content {
+      padding: 0.6rem;
+    }
+    .tag {
+      font-size: 0.6rem;
+      /* padding: 0.4rem 0.8rem; */
+    }
+    .btn-view {
+      padding: 0.35rem 0.7rem;
+      font-size: 0.7rem;
+    }
+
+    .btn-github {
+      width: 28px;
+      height: 28px;
+    }
+  }
+</style>
+
+<script>
+  function initPortfolio() {
+    const tabs = document.querySelectorAll(".tab");
+    const cards = document.querySelectorAll(".card");
+
+    function filterProjects(category: string) {
+      cards.forEach((card) => {
+        if (
+          category === "All" ||
+          card.getAttribute("data-category") === category
+        ) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        const category = tab.getAttribute("data-category") || "All";
+        filterProjects(category);
+      });
+    });
+  }
+
+  // For Astro, we need to ensure the script runs after hydration
+  document.addEventListener("astro:page-load", initPortfolio);
+  // Also run on initial load for dev mode
+  document.addEventListener("DOMContentLoaded", initPortfolio);
+</script>

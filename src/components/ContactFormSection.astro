@@ -1,0 +1,83 @@
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div class="section-title fade-in">
+      <h2>Get In Touch 😊</h2>
+      <p>Have questions? We'd love to hear from you.</p>
+    </div>
+    <form class="contact-form fade-in"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSd1LXLNyiEru2oZuzxKU2rNCfm3FcnmHRs_uY1Wx6FEO9ur1g/formResponse"
+      method="POST" target="_blank">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="entry.2005620554" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="entry.1045781291" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="entry.839337160" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  /* Contact Section */
+  .contact {
+    padding: 8rem 1rem;
+    background: var(--color-contact);
+  }
+
+  .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact-form {
+    margin-top: 4rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  .form-group textarea {
+    height: 150px;
+    resize: vertical;
+  }
+</style>

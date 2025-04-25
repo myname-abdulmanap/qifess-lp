@@ -1,0 +1,453 @@
+---
+const today = new Date();
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    url: "https://facebook.com/manaf.tamvan",
+    icon: `<path fill="currentColor" d="M32 16c0-8.839-7.167-16-16-16C7.161 0 0 7.161 0 16c0 7.984 5.849 14.604 13.5 15.803V20.626H9.437v-4.625H13.5v-3.527c0-4.009 2.385-6.223 6.041-6.223c1.751 0 3.584.312 3.584.312V10.5h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-.713 4.625H18.5v11.177C26.145 30.603 32 23.983 32 15.999z" />`,
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/naff.dev",
+    icon: `<path fill="currentColor" d="M16 0c-4.349 0-4.891.021-6.593.093c-1.709.084-2.865.349-3.885.745a7.85 7.85 0 0 0-2.833 1.849A7.8 7.8 0 0 0 .84 5.52C.444 6.54.179 7.696.095 9.405c-.077 1.703-.093 2.244-.093 6.593s.021 4.891.093 6.593c.084 1.704.349 2.865.745 3.885a7.85 7.85 0 0 0 1.849 2.833a7.8 7.8 0 0 0 2.833 1.849c1.02.391 2.181.661 3.885.745c1.703.077 2.244.093 6.593.093s4.891-.021 6.593-.093c1.704-.084 2.865-.355 3.885-.745a7.85 7.85 0 0 0 2.833-1.849a7.7 7.7 0 0 0 1.849-2.833c.391-1.02.661-2.181.745-3.885c.077-1.703.093-2.244.093-6.593s-.021-4.891-.093-6.593c-.084-1.704-.355-2.871-.745-3.885a7.85 7.85 0 0 0-1.849-2.833A7.7 7.7 0 0 0 26.478.838c-1.02-.396-2.181-.661-3.885-.745C20.89.016 20.349 0 16 0m0 2.88c4.271 0 4.781.021 6.469.093c1.557.073 2.405.333 2.968.553a5 5 0 0 1 1.844 1.197a4.9 4.9 0 0 1 1.192 1.839c.22.563.48 1.411.553 2.968c.072 1.688.093 2.199.093 6.469s-.021 4.781-.099 6.469c-.084 1.557-.344 2.405-.563 2.968c-.303.751-.641 1.276-1.199 1.844a5.05 5.05 0 0 1-1.844 1.192c-.556.22-1.416.48-2.979.553c-1.697.072-2.197.093-6.479.093s-4.781-.021-6.48-.099c-1.557-.084-2.416-.344-2.979-.563c-.76-.303-1.281-.641-1.839-1.199c-.563-.563-.921-1.099-1.197-1.844c-.224-.556-.48-1.416-.563-2.979c-.057-1.677-.084-2.197-.084-6.459c0-4.26.027-4.781.084-6.479c.083-1.563.339-2.421.563-2.979c.276-.761.635-1.281 1.197-1.844c.557-.557 1.079-.917 1.839-1.199c.563-.219 1.401-.479 2.964-.557c1.697-.061 2.197-.083 6.473-.083zm0 4.907A8.21 8.21 0 0 0 7.787 16A8.21 8.8 0 0 0 16 24.213A8.21 8.21 0 0 0 24.213 16A8.21 8.21 0 0 0 16 7.787m0 13.546c-2.948 0-5.333-2.385-5.333-5.333s2.385-5.333 5.333-5.333s5.333 2.385 5.333 5.333s-2.385 5.333-5.333 5.333M26.464 7.459a1.923 1.923 0 0 1-1.923 1.921a1.919 1.919 0 1 1 0-3.838c1.057 0 1.923.86 1.923 1.917" />`,
+  },
+  {
+    name: "Github",
+    url: "https://github.com/myname-abdulmanap",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+	<path fill="currentColor" d="M16 .396c-8.839 0-16 7.167-16 16c0 7.073 4.584 13.068 10.937 15.183c.803.151 1.093-.344 1.093-.772c0-.38-.009-1.385-.015-2.719c-4.453.964-5.391-2.151-5.391-2.151c-.729-1.844-1.781-2.339-1.781-2.339c-1.448-.989.115-.968.115-.968c1.604.109 2.448 1.645 2.448 1.645c1.427 2.448 3.744 1.74 4.661 1.328c.14-1.031.557-1.74 1.011-2.135c-3.552-.401-7.287-1.776-7.287-7.907c0-1.751.62-3.177 1.645-4.297c-.177-.401-.719-2.031.141-4.235c0 0 1.339-.427 4.4 1.641a15.4 15.4 0 0 1 4-.541c1.36.009 2.719.187 4 .541c3.043-2.068 4.381-1.641 4.381-1.641c.859 2.204.317 3.833.161 4.235c1.015 1.12 1.635 2.547 1.635 4.297c0 6.145-3.74 7.5-7.296 7.891c.556.479 1.077 1.464 1.077 2.959c0 2.14-.02 3.864-.02 4.385c0 .416.28.916 1.104.755c6.4-2.093 10.979-8.093 10.979-15.156c0-8.833-7.161-16-16-16z" />
+</svg>`,
+  },
+  {
+    name: "Linkedin",
+    url: "https://linkedin.com/in/abdulmanap",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+	<path fill="currentColor" d="M27.26 27.271h-4.733v-7.427c0-1.771-.037-4.047-2.475-4.047c-2.468 0-2.844 1.921-2.844 3.916v7.557h-4.739V11.999h4.552v2.083h.061c.636-1.203 2.183-2.468 4.491-2.468c4.801 0 5.692 3.161 5.692 7.271v8.385zM7.115 9.912a2.75 2.75 0 0 1-2.751-2.756a2.753 2.753 0 1 1 2.751 2.756m2.374 17.359H4.74V12h4.749zM29.636 0H2.36C1.057 0 0 1.031 0 2.307v27.387c0 1.276 1.057 2.307 2.36 2.307h27.271c1.301 0 2.369-1.031 2.369-2.307V2.307C32 1.031 30.932 0 29.631 0z" />
+</svg>`,
+  },
+];
+
+const footerLinks = {
+  about: [
+    { name: "About Me", url: "/about" },
+    { name: "Portfolio", url: "/#portfolio" },
+    { name: "Blog", url: "/blog" },
+  ],
+  connect: [
+    { name: "Contact", url: "/contact" },
+    { name: "LinkedIn", url: "https://linkedin.com/in/abdulmanap" },
+    { name: "GitHub", url: "https://github.com/myname-abdulmanap" },
+  ],
+};
+---
+
+<footer class="footer">
+  <div class="footer-grid fade-in">
+    <!-- Brand Section -->
+    <div class="brand-section">
+      <h3 class="footer-title">Abdul Manap</h3>
+      <p class="footer-description">
+        I am a full-stack developer and a recent Accounting Information Systems graduate with a strong passion for technology and finance.
+      </p>
+      <div class="social-links">
+        {
+          socialLinks.map((social) => (
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${social.name} Profile`}
+              class="social-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 32 32"
+                class="social-icon"
+              >
+                <Fragment set:html={social.icon} />
+              </svg>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Links Sections -->
+    <div class="links-section">
+      <h4 class="links-title">About 🙋‍♂️</h4>
+      <ul class="footer-links">
+        {
+          footerLinks.about.map((link) => (
+            <li>
+              <a href={link.url} class="footer-link">
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="links-section">
+      <h4 class="links-title">Connect 🤖</h4>
+      <ul class="footer-links">
+        {
+          footerLinks.connect.map((link) => (
+            <li>
+              <a href={link.url} class="footer-link">
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+     <!-- Newsletter Section -->
+	 <div class="newsletter-section">
+		<div class="newsletter-content">
+		  <h4 class="newsletter-title">Stay Updated 📳</h4>
+		  <p class="newsletter-description">Subscribe to my newsletter</p>
+		</div>
+		<form class="newsletter-form">
+		  <input type="email" placeholder="Enter your email" class="newsletter-input" />
+		  <button type="submit" class="newsletter-button">
+			<span class="button-text">Subscribe</span>
+			<span class="button-text-mobile">→</span>
+		  </button>
+		</form>
+	  </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <p class="copyright">
+      &copy; {today.getFullYear()} Abdul Manap Personal Website. All rights reserved.
+    </p>
+    <p class="love">Created with <span class="heart">❤️</span> by Abdul Manap</p>
+
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-features);
+    color: var(--text-color);
+    padding: 4rem 2rem 2rem;
+    position: relative;
+  }
+
+  .footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .brand-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-color);
+  }
+
+  .footer-description {
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-link {
+    color: var(--text-color);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgb(var(--gray-dark), 0.1);
+  }
+
+  .social-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    background: rgb(var(--gray-dark), 0.2);
+  }
+
+  .links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .links-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .footer-link {
+    color: var(--text-color);
+    opacity: 0.8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-link:hover {
+	color: var(--link-color);
+    opacity: 1;
+    transform: translateX(5px);
+  }
+
+  
+  .bottom-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgb(var(--gray-dark), 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .copyright,
+  .love {
+    margin: 0;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+
+  .heart {
+    display: inline-block;
+    animation: heartbeat 1.5s ease infinite;
+  }
+
+
+  .newsletter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+  }
+
+  .newsletter-content {
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+  }
+
+  .newsletter-description {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0.25rem 0 0 0;
+    font-size: 0.9rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgb(var(--gray-dark), 0.1);
+    background: var(--light);
+    color: var(--text-color);
+    font-size: 0.9rem;
+	
+    min-width: 0; /* Prevents input from overflowing */
+  }
+
+  .newsletter-input::placeholder {
+    color: var(--dark);
+    opacity: 0.5;
+	
+  }
+
+  .newsletter-button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    border-color: var(--color-bar);
+    background: var(--light);
+    color: var(--dark);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .button-text-mobile {
+    display: none;
+  }
+
+  .newsletter-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 1024px) {
+
+	.footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .brand-section {
+      grid-column: 1 / -1;
+    }
+
+    .newsletter-section {
+      grid-column: 1 / -1;
+      max-width: 100%;
+    }
+  
+  }
+
+  @media (max-width: 640px) {
+    .footer {
+      padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .bottom-bar {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+	.footer {
+      padding: 3rem 1rem 1.5rem;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+	
+
+    .newsletter-section {
+      padding: 1rem;
+      background: rgb(var(--gray-dark), 0.05);
+      border-radius: 12px;
+      margin: 0 -0.5rem;
+    }
+
+    .newsletter-content {
+      margin-bottom: 0.75rem;
+    }
+
+    .newsletter-description {
+      font-size: 0.85rem;
+    }
+
+    .newsletter-form {
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+
+    .newsletter-input {
+      height: 40px;
+      padding: 0 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .newsletter-button {
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button-text {
+      display: none;
+    }
+
+    .button-text-mobile {
+      display: block;
+      font-size: 1.2rem;
+    }
+
+    .bottom-bar {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+}
+</style>
+
+<!-- <script>
+  const elements = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+</script> -->
+
+

@@ -1,0 +1,209 @@
+---
+import FormattedDate from "./../components/FormattedDate.astro";
+import matter from "gray-matter";
+
+type GitHubFile = {
+  name: string;
+  path: string;
+  type: string;
+  download_url: string;
+};
+
+interface BlogMeta {
+  title: string;
+  description: string;
+  slug: string;
+  pubDate: string;
+  category?: string | string[];
+  heroImage?: string;
+}
+
+const res = await fetch(
+  "https://api.github.com/repos/myname-abdulmanap/test-tina/contents/src/content/blog"
+);
+const files: GitHubFile[] = await res.json();
+
+// Ambil isi dan metadata dari setiap file
+const posts: BlogMeta[] = await Promise.all(
+  files
+    .filter((file) => file.name.endsWith(".mdx"))
+    .map(async (file) => {
+      const slug = file.name.replace(".mdx", "");
+      const raw = await fetch(file.download_url).then((res) => res.text());
+      const { data } = matter(raw);
+
+      return {
+        ...(data as BlogMeta),
+        slug,
+      };
+    })
+);
+
+// Sort berdasarkan pubDate (descending)
+posts.sort(
+  (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+);
+---
+
+<section class="blog">
+  <div class="container">
+    <header class="header fade-in">
+      <h2>Latest Articles 🍵</h2>
+      <p>Explore our collection of articles and insights</p>
+    </header>
+
+    <div class="grid fade-in">
+      {
+        posts.map((post) => (
+          <article class="card">
+            <a href={`/blog/${post.slug}/`}>
+              <div class="img-wrap">
+                <img
+                  src={post.heroImage ?? "/default.jpg"}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="content">
+                <time>
+                  in{" "}
+                  {Array.isArray(post.category)
+                    ? post.category.join(", ")
+                    : post.category}{" "}
+                  - <FormattedDate date={new Date(post.pubDate)} />
+
+                </time>
+                <h3>{post.title}</h3>
+                <p>{post.description}</p>
+              </div>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+    <div class="btn-blog"><a href="/blog" class="btn">More Articles</a></div>
+  </div>
+</section>
+
+<style>
+  .blog {
+    padding: 2rem 0;
+    background: var(--bg-main);
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .header h2 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 0.25rem;
+  }
+
+  .header p {
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .card {
+    background: var(--bg-main);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 4%);
+    transition: transform 0.2s;
+    border: 1px solid rgb(226 232 240 / 80%);
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+  }
+
+  .card a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .img-wrap {
+    height: 140px;
+    overflow: hidden;
+  }
+
+  .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 0.75rem;
+  }
+
+  .content time {
+    color: #64748b;
+    font-size: 0.75rem;
+  }
+
+  .content h3 {
+    margin: 0.25rem 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+
+  .content p {
+    color: #64748b;
+    font-size: 0.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.4;
+  }
+
+  .btn-blog {
+    text-align: center;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .img-wrap {
+      height: 120px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .img-wrap {
+      height: 160px;
+    }
+
+    .more-btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.85rem;
+    }
+  }
+</style>

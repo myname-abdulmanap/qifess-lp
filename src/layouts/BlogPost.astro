@@ -1,0 +1,456 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import HeaderBlog from "../components/HeaderBlog.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import RelatedPosts from "../components/RelatedPosts.astro";
+import SosialShareButtons from "../components/SosialShareButtons.astro";
+
+
+// Add these to your Props
+type Props = CollectionEntry<"blog">["data"] & {
+  slug: string;
+};
+
+
+// Generate the current page URL
+const currentUrl = new URL(Astro.url.pathname, Astro.site);
+
+
+const { title, description, pubDate, updatedDate, heroImage, category } =
+  Astro.props;
+import { ClientRouter } from "astro:transitions";
+
+// Handle both string and array types for category
+const categories = Array.isArray(category) ? category : [category];
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+
+    <style>
+      .blog {
+        width: 850px;
+        max-width: calc(100% - 2em);
+        margin: 0 auto;
+        padding: 4em 1em;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 1020px;
+        margin: 0 auto;
+      }
+
+      .hero-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+
+      .prose {
+        width: 100%;
+        max-width: 750px;
+        font-size: 1.2rem;
+        margin: 2rem auto;
+        color: var(--text-color);
+        opacity: 0.9;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        padding: 0.35rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: var(--bg-tags);
+        color: #718096;
+        transition: transform 0.2s ease;
+      }
+
+      .tag:hover {
+        transform: translateY(-2px);
+      }
+
+      .title {
+        margin-bottom: 1em;
+        padding: 1em 0;
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      .date {
+        margin-bottom: 0.5em;
+        color: var(--text-color);
+      }
+      .last-updated-on {
+        font-style: italic;
+      }
+
+      .blog-hero {
+        background: var(--container-color);
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        padding: 6rem 1.5rem;
+        position: relative;
+      }
+
+      .hero-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .category-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        color: rgb(255, 255, 255);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+
+      .breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin: 1em 0;
+  gap: 0.5rem;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin: 1em 0;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb a {
+    padding: 0.35rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--bg-tags);
+    color: #718096;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    transform: translateY(-2px);
+  }
+
+  .separator {
+    color: var(--bg-color);
+    margin: 0 0.2rem;
+  }
+
+
+      .hero-title {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: var(--text-header);
+        font-weight: 800;
+      }
+
+      .hero-description {
+        font-size: 1.25rem;
+        max-width: 700px;
+        color: var(--text-color);
+        opacity: 0.9;
+      }
+
+      .author-section {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 2.5rem;
+        gap: 1rem;
+      }
+
+      .author-image {
+        width: 60px;
+        height: 60px;
+      }
+
+      .author-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--text-color);
+      }
+
+      .author-info {
+        text-align: left;
+      }
+
+      .author-name {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .author-title {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        opacity: 0.8;
+      }
+
+      .date-text {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        opacity: 0.8;
+      }
+
+      .stats-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        color: var(--text-header);
+      }
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-header);
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-header);
+        opacity: 0.8;
+      }
+
+      .stat-divider {
+        width: 1px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+      .delay-4 {
+        animation-delay: 0.8s;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .blog-hero {
+          padding: 4rem 1rem;
+          min-height: 60vh;
+        }
+
+        .title {
+          font-size: 0.7rem;
+        }
+
+        .hero-description {
+          font-size: 1.1rem;
+        }
+
+        .stats-section {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.5rem;
+        }
+
+        .stat-divider {
+          display: none;
+        }
+        main {
+          width: 100%;
+          max-width: 100%;
+          margin: auto;
+          padding: 2em 1em;
+        }
+
+        .prose {
+          width: 100%;
+          max-width: calc(100% - 2em);
+          margin: 10px;
+          font-size: 1rem;
+          padding: 0.8em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        main {
+          width: 100%;
+          max-width: 100%;
+          margin: auto;
+          padding: 1em 0em;
+        }
+
+        .prose {
+          width: 100%;
+          max-width: calc(100% - 2em);
+          margin-top: 30px;
+          font-size: 1rem;
+          padding: 0em;
+        }
+      }
+    </style>
+   
+
+   <!-- Schema.org Breadcrumb -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Blog",
+        "item": `${Astro.site}blog`
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "${categories[0]}",
+        "item": `${Astro.site}blog/category/${categories[0].toLowerCase()}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "${title}",
+        "item": `${currentUrl}`
+      }
+    ]
+  }
+</script>
+      
+  </head>
+
+  <body>
+    <ClientRouter />
+    <HeaderBlog />
+    <main>
+      <article class="blog">
+      
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/blog">Blog</a> 
+          <span class="separator">&gt;</span>
+          {categories.map((cat, index) => (
+            <>
+              <a href={`/blog/category/${cat.toLowerCase()}`}>{cat}</a>
+              {index < categories.length - 1 && <span class="separator">&gt;</span>}
+            </>
+          ))}
+        </nav>
+        
+        
+        
+        
+      
+        <div class="title">
+          <h1>
+            {title}
+          </h1>
+          <div class="date">
+            <p class="hero-description">
+              {description}
+            </p>
+            <hr />
+            <br />
+            <div class="author-section">
+              <div class="author-image">
+                <img
+                  src="/assets/img/abdul-manap-software-developer.webp"
+                  alt="Abdul Manap"
+                />
+              </div>
+              <div class="author-info">
+                <span class="author-name">Abdul Manap</span>
+                <span class="author-title"
+                  >Software Developer & Tech Enthusiast</span
+                >
+                <br />
+                <span class="date-text"
+                  >Update on
+                  <FormattedDate date={pubDate} />
+                  {
+                    updatedDate && (
+                      <div class="last-updated-on">
+                        Last updated on <FormattedDate date={updatedDate} />
+                      </div>
+                    )
+                  }
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          {
+            heroImage && (
+              <img width={1020} height={510} src={heroImage} alt="" />
+            )
+          }
+        </div>
+        <div class="prose">
+          <slot />
+        
+
+          <div class="tags">
+            {categories.map((cat) => <span class="tag">{cat}</span>)}
+          </div>
+          <br />
+          <hr />
+          <br />
+          <SosialShareButtons title={title} description={description} />
+          <RelatedPosts category={category} />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

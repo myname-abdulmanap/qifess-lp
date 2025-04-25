@@ -1,0 +1,30 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import OtherComponent from "../components/OtherComponent.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+//import transitions effect
+import { ClientRouter } from 'astro:transitions';
+import PortfolioSection from "../components/PortfolioSection.astro";
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+ 
+  </head>
+
+  <body>
+    <ClientRouter />
+    <Header />
+    <OtherComponent />
+    <PortfolioSection />
+    
+    <Footer />
+  
+  </body>
+</html>
