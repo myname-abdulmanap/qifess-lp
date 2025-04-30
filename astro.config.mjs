@@ -10,7 +10,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.qualita-indonesia.com',
+  site: 'https://qualita-indonesia.vercel.app',
   integrations: [mdx(), sitemap()], 
   adapter: vercel(),
   vite: {
