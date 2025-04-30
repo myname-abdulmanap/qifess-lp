@@ -3,13 +3,13 @@
     <div class="hero-content">
       <div class="hero-text">
         <br />
-        <span class="typing-text fade-in delay-4">QUALITA INDONESIA<span class="peace"></span></span>
+        <span class="typing-text fade-in delay-1">QUALITA INDONESIA<span class="peace"></span></span>
         
-        <p class="fade-in">
+        <p class="fade-in delay-2">
           Established in 2012, Qualita Indonesia is becoming a well known company with series of reputable competences to meet stakeholder's high expectation.
         </p>
         
-        <div class="cta-buttons">
+        <div class="cta-buttons fade-in delay-3">
           <a href="#features" class="btn-about">Explore More</a>
          
         </div>
@@ -191,4 +191,31 @@
       padding: 6rem 1rem;
     }
   }
+
+  .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease forwards;
+    }
+  
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+    .delay-4 {
+      animation-delay: 0.8s;
+    }
+  
 </style>
