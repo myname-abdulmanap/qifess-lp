@@ -110,4 +110,4 @@ document.addEventListener('DOMContentLoaded', initApp);
 // Jalankan ulang script setelah transisi halaman dengan Astro View Transitions
 document.addEventListener('astro:after-swap', initApp);
 
-console.log("Halo brother, hayo lagi ngapain nih, salam Qualita-Indonesia!")  ");
+console.log("Halo brother, hayo lagi ngapain nih, salam Qualita-Indonesia!");
