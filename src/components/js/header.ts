@@ -9,10 +9,8 @@ const themeToggle: ThemeToggle = {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme') as 'light' | 'dark';
     }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
-    return 'light';
+    // Perubahan di sini: selalu kembalikan 'light' sebagai default
+    return 'dark';
   })(),
 
   setTheme(theme) {
@@ -41,8 +39,11 @@ const initApp = () => {
     themeToggle.setTheme(isDark ? 'light' : 'dark');
   }
 
+  // Tetap dengarkan perubahan preferensi sistem, tapi sekarang ini hanya untuk informasi
+  // dan tidak akan otomatis mengubah tema
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    themeToggle.setTheme(e.matches ? 'dark' : 'light');
+    // Komentar baris berikut agar tidak otomatis mengikuti preferensi sistem
+    // themeToggle.setTheme(e.matches ? 'dark' : 'light');
   });
 
   /*** 🔥 Header Transparan & Navbar ***/
@@ -109,4 +110,4 @@ document.addEventListener('DOMContentLoaded', initApp);
 // Jalankan ulang script setelah transisi halaman dengan Astro View Transitions
 document.addEventListener('astro:after-swap', initApp);
 
-console.log("Halo brother, hayo lagi ngapain nih:v");
+console.log("Halo brother, hayo lagi ngapain nih, salam Qualita-Indonesia!")  ");
