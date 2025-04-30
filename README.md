@@ -1,4 +1,4 @@
-# Abdulmanap.com : astro blog template
+# QI COMPANY PROFILE
 
 
 Features:

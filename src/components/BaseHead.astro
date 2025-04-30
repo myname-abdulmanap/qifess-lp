@@ -31,6 +31,9 @@ const { title, description, image = '/assets/img/banner.jpg' } = Astro.props;
 <!-- Font preloads -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -56,8 +59,9 @@ const { title, description, image = '/assets/img/banner.jpg' } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- Target Indonesian Audience -->
-<link rel="alternate" href="https://www.abdulmanap.com" hreflang="id-ID" />
+<link rel="alternate" href="https://qualita-indonesia.com" hreflang="id-ID" />
 <meta name="geo.region" content="ID" />
 <meta name="geo.placename" content="Indonesia" />
-<meta name="google-site-verification" content="azZ_ltTd1dR5pAzaPCddC22OPgQV_c4-f1AA5gH4gSg" />
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
 

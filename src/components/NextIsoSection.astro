@@ -1,0 +1,430 @@
+---
+// ServiceSection.astro
+---
+
+<section class="services-section">
+  <div class="container">
+    <div class="services-header">
+      <h2 class="animate-element fade-up">Our Services<span class="line-animated"></span></h2>
+      <p class="animate-element fade-up">We are supported by a team specializing in Project Management, IT Solutions, Technical Management and Repair Services</p>
+    </div>
+
+    <div class="services-layout">
+      <div class="services-grid">
+        <div class="service-card animate-element fade-in-right">
+          <div class="service-icon red">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Technical Service Management</h3>
+            <p>Field Service, Helpdesk, Technical Support</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-element fade-in-right">
+          <div class="service-icon blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Project Management</h3>
+            <p>Project Deployment, Project Administration</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-element fade-in-right">
+          <div class="service-icon yellow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Management Service</h3>
+            <p>Professional Manpower, Monitoring, Service Level Agreement</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-element fade-in-right">
+          <div class="service-icon red">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>IT Management</h3>
+            <p>Field Monitoring Application, IoT Security Solution</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-element fade-in-right">
+          <div class="service-icon blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="service-content">
+            <h3>Repair Centre & Warehouse</h3>
+            <p>Repair Services, Sparepart Management, Warehouse Management</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lottie-container animate-element fade-in-left">
+        <dotlottie-player
+          src="https://lottie.host/22ab9698-c0a3-421f-a435-23f88fb9c743/aIuYReVX5S.lottie"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></dotlottie-player>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Intersection Observer untuk animasi scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          
+          // Animasi khusus untuk heading dengan garis
+          if (entry.target.tagName === 'H2') {
+            // Delay kecil sebelum animasi garis muncul untuk efek bertahap
+            setTimeout(() => {
+              entry.target.classList.add('animate-line');
+            }, 300);
+          }
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    });
+
+    // Observe semua elemen yang perlu dianimasi
+    document.querySelectorAll('.animate-element').forEach(element => {
+      observer.observe(element);
+    });
+    
+    // Khusus untuk h2, perlu diobserve terpisah karena animasi garis
+    document.querySelectorAll('.services-header h2').forEach(heading => {
+      observer.observe(heading);
+    });
+
+    // Animasi hover untuk service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.classList.add('card-hover');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('card-hover');
+      });
+    });
+  });
+</script>
+
+<style>
+  .services-section {
+    padding: 6rem 0;
+    background: var(--service-container);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .services-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .services-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #4338ca, #ec4899);
+    border-radius: 3px;
+    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .services-header h2.animate::after {
+    width: 80px;
+  }
+
+  .services-header p {
+    max-width: 36rem;
+    margin: 1.5rem auto 0;
+    color: var(--text-secondary, #6b7280);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .services-layout {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    flex: 1;
+  }
+
+  .service-card {
+    background: var(--color-card, white);
+    padding: 1.75rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    will-change: transform;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--icon-color, #4338ca);
+    transition: height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .service-card.card-hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-card.card-hover::before {
+    height: 100%;
+  }
+
+  .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    margin-right: 1.25rem;
+    color: white;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .card-hover .service-icon {
+    transform: scale(1.1);
+  }
+
+  .service-icon svg {
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+  }
+
+  .card-hover .service-icon svg {
+    transform: scale(1.1);
+  }
+
+  .service-icon.red {
+    background: linear-gradient(135deg, #ff6b6b, #ee5253);
+  }
+
+  .service-icon.blue {
+    background: linear-gradient(135deg, #48a0f9, #3b82f6);
+  }
+
+  .service-icon.yellow {
+    background: linear-gradient(135deg, #feca57, #f59e0b);
+  }
+
+  .service-content {
+    flex: 1;
+  }
+
+  .service-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--heading-color, #1f2937);
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-hover .service-content h3 {
+    color: #4338ca;
+    transform: translateX(5px);
+  }
+
+  .service-content p {
+    color: var(--text-body, #6b7280);
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: transform 0.3s ease;
+  }
+
+  .card-hover .service-content p {
+    transform: translateX(5px);
+  }
+
+  .lottie-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .lottie-container::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 70%);
+    z-index: -1;
+    animation: pulse 3s infinite;
+  }
+
+  dotlottie-player {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.08));
+  }
+
+  /* Animation Keyframes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(0.95); opacity: 0.7; }
+  }
+
+  /* Entrance Animations */
+  .animate-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-element.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-up {
+    transform: translateY(50px);
+  }
+
+  .fade-in-right {
+    transform: translateX(-50px);
+  }
+
+  .fade-in-left {
+    transform: translateX(50px);
+  }
+
+  /* Staggered animations for service cards */
+  .service-card:nth-child(1).animate { transition-delay: 0.1s; }
+  .service-card:nth-child(2).animate { transition-delay: 0.2s; }
+  .service-card:nth-child(3).animate { transition-delay: 0.3s; }
+  .service-card:nth-child(4).animate { transition-delay: 0.4s; }
+  .service-card:nth-child(5).animate { transition-delay: 0.5s; }
+
+  /* Exit animation with fade-out */
+  .exit {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 1100px) {
+    .services-layout {
+      flex-direction: column;
+    }
+    
+    .lottie-container {
+      order: -1;
+      margin-bottom: 3rem;
+      width: 350px;
+      height: 350px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .services-header h2 {
+      font-size: 2rem;
+    }
+    
+    .lottie-container {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .service-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .service-icon {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+    
+    .lottie-container {
+      width: 250px;
+      height: 250px;
+    }
+  }
+</style>

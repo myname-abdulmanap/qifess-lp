@@ -4,7 +4,7 @@
  */
 
 
-
+ @import "tailwindcss";
 
 
 * {
@@ -45,24 +45,28 @@ html {
   --text-header: #ffffff;
   --color-btn-primary: #2563eb;
   --color-features: #000000;
+  --service-container: #000000;
   --color-bar: rgb(244, 230, 181);
   --color-card: #2c2b2b;
   --color-contact: #232424;
   --color-portfolio: #000000;
+  --text-bar: #fff;
 }
 
 [data-theme="dark"] {
   --bg-color: #ffffff;
   --bg-main: #f9f9f9ce;
   --bg-tags: #f8fafc;
-  --text-color: #2d2d2d;
+  --text-color: #383737;
+  --text-bar: #ffffff;
   --heading-color: #000000;
   --link-color: #66b3ff;
   --border-color: #404040;
-  --container-color: #0e5ece;
+  --container-color: #1954c2;
   --text-header: #ffffff;
   --color-btn-primary: #ffffff;
   --color-features: #f8fafc;
+  --service-container: #fff;
   --color-card: #ffffff;
   --color-contact: #fffcfc;
   --color-portfolio: #ffffff;
@@ -91,7 +95,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Atkinson", "Segoe UI", sans-serif;
+  font-family: "Noto Sans", "Segoe UI", sans-serif;
   line-height: 1.5;
 }
 
@@ -307,27 +311,34 @@ hr {
 
 .btn-about {
   display: inline-block;
-  padding: 1.25rem 2.5rem;
-  background: var(--text-color);
-  color: var(--color-btn-primary);
+  padding: 1rem 2rem;
+  background: var(--container-color);
+  color: white;
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
+  border-radius: 50px; /* Supaya super bulat */
+  font-weight: 400;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border: 2px solid var(--color-btn-primary);
+  position: relative;
+  overflow: hidden;
 }
+
+
+
+
+
 
 .btn-about:hover {
   transform: translateY(-3px);
+  color: rgb(255, 255, 255);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .cta-buttons {
   display: flex;
   gap: 2rem;
-  justify-content: center;
+  justify-content: left;
   margin-top: 3rem;
 }
 
