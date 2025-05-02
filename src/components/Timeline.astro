@@ -1,0 +1,23 @@
+---
+//timeline.astro
+---
+
+<img src="/public/assets/img/timeline.png" alt="Timeline" class="timeline-image" />
+
+<style>
+  .timeline-image {
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .timeline-image {
+      width: 90%;
+    }
+  }
+</style>

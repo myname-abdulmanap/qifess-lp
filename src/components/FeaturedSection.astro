@@ -460,112 +460,12 @@
       display: none; /* Hide on smallest screens for better performance */
     }
   }
+
+  .no-js .feature-card {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Intersection Observer for reveal animations
-    const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '0px 0px -100px 0px'
-    };
-    
-    // Observer for the whole section
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in-viewport');
-          // Once the section is visible, we don't need to observe it anymore
-          sectionObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    // Observe the features section
-    const featuresSection = document.querySelector('.features');
-    if (featuresSection) {
-      sectionObserver.observe(featuresSection);
-    }
-    
-    // Observer for elements that should reveal on scroll
-    const elementObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          // Once the element is visible, we don't need to observe it anymore
-          elementObserver.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-    
-    // Observe all elements with reveal-element class
-    const revealElements = document.querySelectorAll('.reveal-element');
-    revealElements.forEach(element => {
-      elementObserver.observe(element);
-    });
-    
-    // Handle card reveals with delay
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Get data-delay attribute or default to 0
-          const delay = entry.target.getAttribute('data-delay') || 0;
-          
-          // Set a timeout based on the delay
-          setTimeout(() => {
-            entry.target.classList.add('is-visible');
-          }, parseInt(delay));
-          
-          // Once the card is processed, we don't need to observe it anymore
-          cardObserver.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-    
-    // Observe all cards
-    const revealCards = document.querySelectorAll('.reveal-card');
-    revealCards.forEach(card => {
-      cardObserver.observe(card);
-    });
-    
-    // Parallax effect on shapes when scrolling
-    let shapes = document.querySelectorAll('.parallax-shape');
-    
-    window.addEventListener('scroll', () => {
-      const scrollPosition = window.scrollY;
-      
-      shapes.forEach((shape, index) => {
-        // Different factor for each shape to create varied movement
-        const factor = (index + 1) * 0.05;
-        
-        // Different direction based on index
-        const direction = index % 2 === 0 ? 1 : -1;
-        
-        // Apply transform
-        shape.style.transform = `translate(${scrollPosition * factor * direction}px, ${scrollPosition * factor * 0.5}px)`;
-      });
-    });
-    
-    // Handle mouse movement for subtle parallax effect
-    featuresSection.addEventListener('mousemove', (e) => {
-      // Only apply if screen is large enough
-      if (window.innerWidth > 1024) {
-        // Get mouse position relative to the container
-        const mouseX = e.clientX / window.innerWidth - 0.5;
-        const mouseY = e.clientY / window.innerHeight - 0.5;
-        
-        // Apply subtle movements to lottie player
-        const lottiePlayer = document.querySelector('.lottie-player');
-        if (lottiePlayer) {
-          lottiePlayer.style.transform = `scale(1.05) translate(${mouseX * 20}px, ${mouseY * 20}px)`;
-        }
-        
-        // Apply different movement to each shape
-        shapes.forEach((shape, index) => {
-          const factor = (index + 2) * 15;
-          shape.style.transform = `translate(${mouseX * factor}px, ${mouseY * factor}px)`;
-        });
-      }
-    });
-  });
-</script>
+<script src="/src/components/js/featured.js"></script>

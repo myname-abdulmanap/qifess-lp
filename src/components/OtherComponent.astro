@@ -1,104 +1,223 @@
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <br />
+        <span class="typing-text fade-in delay-1">Welcome to <br /> PT Qualita Indonesia<span class="peace"></span></span>
+        
+        <p class="fade-in delay-2">
+          We are a technology-driven company specializing in Internet of Things (IoT) solutions, infrastructure monitoring systems, and digital services designed to help businesses operate more efficiently, securely, and intelligently.
+        </p>
+        
+        
+        <div class="cta-buttons fade-in delay-3">
+          <a href="#about" class="btn-about">View More</a>
+         
+        </div>
+      </div>
+      
+      <div class="hero-image fade-in delay-4">
+        <dotlottie-player src="https://lottie.host/dfae2e7d-906f-48f2-b921-e258a0aa1038/ilp8vqa0jD.lottie" background="transparent" speed="1" style="width: 400px; height: 400px" loop autoplay></dotlottie-player>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 <style>
-  .cta h2 {
-    font-size: 4rem;
+  /* Hero Section */
+  .hero {
+    background: var(--container-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 3rem 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    color: var(--text-header);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .hero-image img:hover {
+    transform: scale(1.02);
+  }
+
+  .hero h1 {
+    font-size: 2rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
     font-weight: 800;
-    color: var(--text-header);
   }
 
-  .pricing-card h3 {
-    color: var(--dark);
+  .hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--text-color);
   }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 0 3rem 0;
+   
+  }
+
+  .typing-text {
+  
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+  
+  .typing-text-sub {
+    color: var(--light);
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .peace {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .typing-text:hover .peace {
+    transform: rotate(15deg);
+  }
+
+  /* Buttons styling */
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+
+  /* Animation classes */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .delay-4 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .hero-content {
+      flex-direction: column;
+    }
+    
+    .hero-text, .hero-image {
+      width: 100%;
+    }
+    
+    .hero-text {
+      text-align: center;
+    }
+    
+    .cta-buttons {
+      justify-content: center;
+    }
+    
+    .hero p {
+      margin: 0 auto 3rem auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .typing-text {
+      font-size: 2rem;
+      text-align: center;
+    }
+    
+    .hero p {
+      font-size: 1.0rem;
+    }
+    
+    .hero {
+      padding: 6rem 1rem;
+    }
+  }
+
+  .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease forwards;
+    }
+  
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+    .delay-4 {
+      animation-delay: 0.8s;
+    }
+  
 </style>
-
-<section class="cta">
-  <div class="cta-container">
-    <h2>Ready to Develop Your Dream Website?</h2>
-    <p>
-      Join hundreds of clients who have entrusted their website development to abdulmanap.com.
-    </p>
-    <a href="/contact" class="btn">Free Consultation</a>
-  </div>
-</section>
-
-<section class="pricing" id="pricing">
-  <div class="pricing-container">
-    <div class="section-title">
-      <h2>Website Service Packages</h2>
-      <p>Choose a package that fits your business needs</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <div class="price">$60<span>/website</span></div>
-        <ul class="features-list">
-          <li>Landing Page (5 sections)</li>
-          <li>Responsive Design</li>
-          <li>Basic SEO</li>
-          <li>1x Revision</li>
-        </ul>
-        <a href="/contact" class="btn">Choose Package</a>
-      </div>
-      <div class="pricing-card popular">
-        <h3>Business</h3>
-        <div class="price">$300<span>/website</span></div>
-        <ul class="features-list">
-          <li>Business Website (10+ pages)</li>
-          <li>Custom Design</li>
-          <li>Advanced SEO</li>
-          <li>CMS Integration</li>
-          <li>3x Revisions</li>
-        </ul>
-        <a href="/contact" class="btn">Choose Package</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Enterprise</h3>
-        <div class="price">$600<span>/project</span></div>
-        <ul class="features-list">
-          <li>Custom Web Application</li>
-          <li>Full-Stack Development</li>
-          <li>Database Integration</li>
-          <li>API Development</li>
-          <li>Unlimited Revisions</li>
-        </ul>
-        <a href="/contact" class="btn">Contact Us</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="testimonials-container">
-    <div class="section-title">
-      <h2>Client Testimonials</h2>
-      <p>Experiences from clients who have used our services</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <p class="testimonial-content">
-          "Extremely satisfied with the website development results. The process was professional and completed on time. The final website met our expectations perfectly."
-        </p>
-        <div class="testimonial-author">
-          <div class="author-avatar">BS</div>
-          <div class="author-info">
-            <h4>Budi Santoso</h4>
-            <p>CEO, PT Maju Bersama</p>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-content">
-          "The development team was very communicative and responsive to feedback. The website turned out great and has significantly improved our business's online presence."
-        </p>
-        <div class="testimonial-author">
-          <div class="author-avatar">RW</div>
-          <div class="author-info">
-            <h4>Rina Wijaya</h4>
-            <p>Marketing Director, Sukses Group</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
