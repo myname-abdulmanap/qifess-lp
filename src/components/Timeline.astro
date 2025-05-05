@@ -1,23 +1,541 @@
 ---
-//timeline.astro
+// VerticalMilestoneTimeline.astro
 ---
 
-<img src="/assets/img/timeline.png" alt="Timeline" class="timeline-image" />
+<div class="vertical-timeline-container">
+  <h2 class="timeline-heading">Company <span class="gradient-text">Milestones</span></h2>
+
+  <div class="timeline-wrapper">
+
+    <div class="timeline-line">
+      <div class="timeline-progress" id="timeline-progress"></div>
+    </div>
+
+
+    <div class="timeline-items">
+      <div class="timeline-item" data-year="2012">
+        <div class="timeline-item-content left">
+          <div class="timeline-dot">
+            <div class="node-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 8h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2v4l-4-4H9a1.994 1.994 0 0 1-1.414-.586m0 0L11 14h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2v4l.586-.586z" />
+              </svg>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="year-badge">2012</div>
+            <h3>Established</h3>
+            <p>Established and began serving WN manpower outsourcing services.</p>
+            <div class="card-footer">
+              <span class="tag">Founding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-year="2013">
+        <div class="timeline-item-content right">
+          <div class="timeline-dot">
+            <div class="node-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 10l-5-5.5-5 5.5M17 14l-5 5.5-5-5.5" />
+              </svg>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="year-badge">2013</div>
+            <h3>WN SLM Nation Wide</h3>
+            <p>Expanded services nationwide, developing QIFESS SIMQ infrastructure.</p>
+            <div class="card-footer">
+              <span class="tag">Expansion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-year="2015">
+        <div class="timeline-item-content left">
+          <div class="timeline-dot">
+            <div class="node-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 7h-5v13H5V7H1l9-7 9 7h1zM9 21v-6h6v6" />
+              </svg>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="year-badge">2015</div>
+            <h3>ISO 9001 Certification</h3>
+            <p>Achieved ISO 9001 certification through SGS, validating our quality management systems.</p>
+            <div class="card-footer">
+              <span class="tag">Certification</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-year="2018">
+        <div class="timeline-item-content right">
+          <div class="timeline-dot">
+            <div class="node-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 11h2m-1-4v8m-9 4l1-3h6l1 3M8 7h8m-4-4v5m-7 8h2m-1-4v8" />
+              </svg>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="year-badge">2018</div>
+            <h3>IoT Security Solution</h3>
+            <p>Launched innovative IoT product for ATM security, expanding our technological offerings.</p>
+            <div class="card-footer">
+              <span class="tag">Innovation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-year="2019">
+        <div class="timeline-item-content left">
+          <div class="timeline-dot">
+            <div class="node-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 17l5-5-5-5M3 8h13M3 16h13" />
+              </svg>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="year-badge">2019</div>
+            <h3>EDC Expansion</h3>
+            <p>Extended services to EDC business segment and won the DANA partnership.</p>
+            <div class="card-footer">
+              <span class="tag">Partnership</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-year="2021">
+        <div class="timeline-item-content right">
+          <div class="timeline-dot">
+            <div class="node-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="year-badge">2021</div>
+            <h3>Retail POS Extension</h3>
+            <p>Expanded to retail POS and other brand ATMs, including NCR and Hyosung systems.</p>
+            <div class="card-footer">
+              <span class="tag">Diversification</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-year="2022">
+        <div class="timeline-item-content left">
+          <div class="timeline-dot">
+            <div class="node-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v6m0 12v2M4.93 4.93l4.24 4.24m5.66 5.66l4.24 4.24M2 12h6m8 0h6M4.93 19.07l4.24-4.24m5.66-5.66l4.24-4.24" />
+              </svg>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="year-badge">2022</div>
+            <h3>BRI Partnership</h3>
+            <p>Won and began supporting BRI EDC 100,000 deployment project.</p>
+            <div class="card-footer">
+              <span class="tag">Major Contract</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-year="2023">
+        <div class="timeline-item-content right">
+          <div class="timeline-dot">
+            <div class="node-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="year-badge">2023</div>
+            <h3>BSI Milestone</h3>
+            <p>Successfully deployed BSI 10,000 EFT POS systems across Indonesia.</p>
+            <div class="card-footer">
+              <span class="tag">Achievement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
-  .timeline-image {
-    max-width: 100%;
-    width: 600px;
-    height: auto;
-    display: block;
-    margin: 2rem auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Base styles */
+  .vertical-timeline-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    background-color: var(--bg-color, #f8fafc);
+    color: var(--text-color, #1e293b);
+    font-family: system-ui, sans-serif;
   }
 
+  .timeline-heading {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, #3b82f6, #10b981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Timeline structure */
+  .timeline-wrapper {
+    position: relative;
+    padding: 2rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: rgba(203, 213, 225, 0.3);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .timeline-progress {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 0%;
+    background: linear-gradient(to bottom, #3b82f6, #10b981);
+    transition: height 0.5s ease;
+  }
+
+  /* Timeline items */
+  .timeline-items {
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-item {
+    margin-bottom: 6rem;
+    position: relative;
+  }
+
+  .timeline-item-content {
+    position: relative;
+    width: 45%;
+    display: flex;
+    align-items: center;
+  }
+
+  .timeline-item-content.left {
+    margin-left: auto;
+    margin-right: 0;
+    flex-direction: row-reverse;
+  }
+
+  .timeline-item-content.right {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .timeline-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 20px;
+    z-index: 3;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.5s ease;
+  }
+
+  .timeline-item-content.left .timeline-dot {
+    right: -22px;
+  }
+
+  .timeline-item-content.right .timeline-dot {
+    left: -22px;
+  }
+
+  .timeline-item.active .timeline-dot {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .node-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+
+  /* Content cards */
+  .content-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(203, 213, 225, 0.5);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-item.active .content-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .year-badge {
+    position: absolute;
+    top: -15px;
+    background: linear-gradient(to right, #3b82f6, #10b981);
+    color: white;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+  }
+
+  .timeline-item-content.left .year-badge {
+    left: 20px;
+  }
+
+  .timeline-item-content.right .year-badge {
+    right: 20px;
+  }
+
+  .content-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e293b;
+  }
+
+  .content-card p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #475569;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .tag {
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1));
+    border-radius: 9999px;
+    color: #3b82f6;
+  }
+
+  /* Timeline dot colors - These correspond to the colors in the image */
+  .timeline-item:nth-child(1) .timeline-dot { background: linear-gradient(to bottom right, #65a30d, #84cc16); }
+  .timeline-item:nth-child(2) .timeline-dot { background: linear-gradient(to bottom right, #0891b2, #06b6d4); }
+  .timeline-item:nth-child(3) .timeline-dot { background: linear-gradient(to bottom right, #15803d, #22c55e); }
+  .timeline-item:nth-child(4) .timeline-dot { background: linear-gradient(to bottom right, #1d4ed8, #3b82f6); }
+  .timeline-item:nth-child(5) .timeline-dot { background: linear-gradient(to bottom right, #7e22ce, #a855f7); }
+  .timeline-item:nth-child(6) .timeline-dot { background: linear-gradient(to bottom right, #be123c, #e11d48); }
+  .timeline-item:nth-child(7) .timeline-dot { background: linear-gradient(to bottom right, #ca8a04, #eab308); }
+  .timeline-item:nth-child(8) .timeline-dot { background: linear-gradient(to bottom right, #0369a1, #0ea5e9); }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive adjustments */
   @media (max-width: 768px) {
-    .timeline-image {
-      width: 90%;
+    .timeline-heading {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    .timeline-line {
+      left: 30px;
+    }
+    
+    .timeline-item-content {
+      width: auto;
+      margin-left: 60px !important;
+      margin-right: 20px !important;
+    }
+    
+    .timeline-item-content.left,
+    .timeline-item-content.right {
+      flex-direction: row;
+    }
+    
+    .timeline-item-content.left .timeline-dot,
+    .timeline-item-content.right .timeline-dot {
+      left: -60px;
+      right: auto;
+    }
+    
+    .timeline-item-content.left .year-badge,
+    .timeline-item-content.right .year-badge {
+      left: 20px;
+      right: auto;
+    }
+    
+    .content-card {
+      padding: 1.5rem;
+    }
+    
+    .content-card h3 {
+      font-size: 1.25rem;
+    }
+    
+    .content-card p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .timeline-heading {
+      font-size: 2rem;
+    }
+    
+    .timeline-line {
+      left: 20px;
+    }
+    
+    .timeline-item-content {
+      margin-left: 40px !important;
+      margin-right: 10px !important;
+    }
+    
+    .timeline-item-content.left .timeline-dot,
+    .timeline-item-content.right .timeline-dot {
+      left: -40px;
+      width: 36px;
+      height: 36px;
+    }
+    
+    .node-icon {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .content-card {
+      padding: 1.25rem;
     }
   }
 </style>
+
+<script>
+
+export function setupTimeline() {
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  const timelineProgress = document.getElementById('timeline-progress');
+  
+  if (!timelineItems.length || !timelineProgress) return;
+  
+
+  const updateTimeline = () => {
+    const windowHeight = window.innerHeight;
+    let activatedItems = 0;
+    
+    timelineItems.forEach((item, index) => {
+      const itemTop = item.getBoundingClientRect().top;
+      
+  
+      if (itemTop < windowHeight * 0.6) {
+        item.classList.add('active');
+        activatedItems = index + 1;
+      } else {
+        item.classList.remove('active');
+      }
+    });
+    
+   
+    const progressPercentage = (activatedItems / timelineItems.length) * 100;
+    timelineProgress.style.height = `${progressPercentage}%`;
+  };
+  
+
+  updateTimeline();
+  
+  window.addEventListener('scroll', updateTimeline);
+  
+
+  window.addEventListener('resize', updateTimeline);
+  
+
+  if ('IntersectionObserver' in window) {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6,
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          
+     
+          const activeItems = document.querySelectorAll('.timeline-item.active');
+          const progressPercentage = (activeItems.length / timelineItems.length) * 100;
+          timelineProgress.style.height = `${progressPercentage}%`;
+        }
+      });
+    }, options);
+    
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+  }
+}
+
+
+document.addEventListener('astro:page-load', () => {
+  setupTimeline();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupTimeline();
+});
+
+
+document.addEventListener('astro:after-swap', () => {
+  setupTimeline();
+});
+</script>

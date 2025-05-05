@@ -1,81 +1,136 @@
-function initFeatureAnimations() {
-  // (Pindahkan semua isi dari event listener DOMContentLoaded ke sini)
 
+const animations = {
+  sectionObserver: null,
+  elementObserver: null,
+  cardObserver: null,
+  scrollHandler: null,
+  mousemoveHandler: null,
+};
+
+
+function cleanupPreviousAnimations() {
+
+  if (animations.sectionObserver) animations.sectionObserver.disconnect();
+  if (animations.elementObserver) animations.elementObserver.disconnect();
+  if (animations.cardObserver) animations.cardObserver.disconnect();
+  
+
+  if (animations.scrollHandler) {
+    window.removeEventListener('scroll', animations.scrollHandler);
+  }
+  
+
+  const featuresSection = document.querySelector('.features');
+  if (featuresSection && animations.mousemoveHandler) {
+    featuresSection.removeEventListener('mousemove', animations.mousemoveHandler);
+  }
+}
+
+function initFeatureAnimations() {
+  // Cleanup any existing animations to prevent duplicates
+  cleanupPreviousAnimations();
+  
   const observerOptions = {
     threshold: 0.2,
     rootMargin: '0px 0px -100px 0px'
   };
 
-  const sectionObserver = new IntersectionObserver((entries) => {
+  // Section observer
+  animations.sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-in-viewport');
-        sectionObserver.unobserve(entry.target);
+        animations.sectionObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
 
   const featuresSection = document.querySelector('.features');
   if (featuresSection) {
-    sectionObserver.observe(featuresSection);
+    animations.sectionObserver.observe(featuresSection);
 
-    featuresSection.addEventListener('mousemove', (e) => {
+    // Mouse move handler
+    animations.mousemoveHandler = (e) => {
       if (window.innerWidth > 1024) {
         const mouseX = e.clientX / window.innerWidth - 0.5;
         const mouseY = e.clientY / window.innerHeight - 0.5;
+        
         const lottiePlayer = document.querySelector('.lottie-player');
         if (lottiePlayer) {
           lottiePlayer.style.transform = `scale(1.05) translate(${mouseX * 20}px, ${mouseY * 20}px)`;
         }
+        
         const shapes = document.querySelectorAll('.parallax-shape');
         shapes.forEach((shape, index) => {
           const factor = (index + 2) * 15;
           shape.style.transform = `translate(${mouseX * factor}px, ${mouseY * factor}px)`;
         });
       }
-    });
+    };
+    
+    featuresSection.addEventListener('mousemove', animations.mousemoveHandler);
   }
 
-  const elementObserver = new IntersectionObserver((entries) => {
+  // Element observer
+  animations.elementObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        elementObserver.unobserve(entry.target);
+        animations.elementObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
   const revealElements = document.querySelectorAll('.reveal-element');
-  revealElements.forEach(el => elementObserver.observe(el));
+  revealElements.forEach(el => animations.elementObserver.observe(el));
 
-  const cardObserver = new IntersectionObserver((entries) => {
+  // Card observer
+  animations.cardObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const delay = entry.target.getAttribute('data-delay') || 0;
         setTimeout(() => {
           entry.target.classList.add('is-visible');
         }, parseInt(delay));
-        cardObserver.unobserve(entry.target);
+        animations.cardObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
   const revealCards = document.querySelectorAll('.reveal-card');
-  revealCards.forEach(card => cardObserver.observe(card));
+  revealCards.forEach(card => animations.cardObserver.observe(card));
 
+  // Scroll event handler
   const shapes = document.querySelectorAll('.parallax-shape');
-  window.addEventListener('scroll', () => {
+  animations.scrollHandler = () => {
     const scrollY = window.scrollY;
     shapes.forEach((shape, index) => {
       const factor = (index + 1) * 0.05;
       const direction = index % 2 === 0 ? 1 : -1;
       shape.style.transform = `translate(${scrollY * factor * direction}px, ${scrollY * factor * 0.5}px)`;
     });
-  });
+  };
+  
+  window.addEventListener('scroll', animations.scrollHandler);
 }
 
-// Jalankan saat DOM pertama kali load
-document.addEventListener('DOMContentLoaded', initFeatureAnimations);
+// Handling untuk Astro View Transitions
+document.addEventListener('astro:page-load', () => {
+  initFeatureAnimations();
+});
 
-// Jalankan lagi setelah view transition selesai
-document.addEventListener('astro:after-swap', initFeatureAnimations);
+// Initial setup untuk first page load
+document.addEventListener('DOMContentLoaded', () => {
+  initFeatureAnimations();
+});
+
+// Handle ketika content DOM diperbarui oleh Astro
+document.addEventListener('astro:after-swap', () => {
+  initFeatureAnimations();
+});
+
+// Cleanup saat meninggalkan halaman untuk mencegah memory leaks
+document.addEventListener('astro:before-swap', cleanupPreviousAnimations);
+
+// Export fungsi jika ingin digunakan secara modular
+export { initFeatureAnimations, cleanupPreviousAnimations };
