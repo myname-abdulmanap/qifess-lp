@@ -13,6 +13,7 @@ import ThemeToggle from "./ThemeToggle.astro";
   header.transparent {
     background: transparent;
     box-shadow: none;
+
   }
 
   header.white {
@@ -32,7 +33,7 @@ import ThemeToggle from "./ThemeToggle.astro";
   .logo a {
     position: relative;
     display: inline-block;
-    width: 100px;
+    width: 200px;
     height: 50px;
     overflow: visible;
   }
@@ -41,8 +42,8 @@ import ThemeToggle from "./ThemeToggle.astro";
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 150px;
-    height: auto;
+    width: 100px;
+    height: 30px;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -50,7 +51,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 
   .logo-white {
     opacity: 0;
-    filter: brightness(0) invert(1);
+    
   }
 
   header.transparent .logo-white {
@@ -71,14 +72,14 @@ import ThemeToggle from "./ThemeToggle.astro";
 
   .menu a {
     text-decoration: none;
-    color: var(--text-bar);
+    color: var(--text-color);
     font-weight: bold;
     transition: color 0.3s;
     font-size: 1.1rem;
   }
 
   header.white .menu a {
-    color: var(--text-color);
+    color: var(--text-bar);
   }
 
   .navbar-icons {
@@ -104,7 +105,7 @@ import ThemeToggle from "./ThemeToggle.astro";
   }
 
   header.white .bar {
-    background-color: var(--text-color);
+    background-color: var(--text-bar);
   }
 
   .hamburger {
@@ -271,8 +272,8 @@ import ThemeToggle from "./ThemeToggle.astro";
   <div class="nav-container">
     <div class="logo">
       <a href="/">
-        <img class="logo-img logo-dark" src="/assets/img/qualita_indonesia_logo.png" alt="Logo" width="50" height="50" />
-        <img class="logo-img logo-white" src="/assets/img/qualita_indonesia_logo.png" alt="Logo" width="50" height="50" />
+        <img class="logo-img logo-dark" src="/assets/img/logo-protectcube.png" alt="Logo" width="20" height="20" />
+        <img class="logo-img logo-white" src="/assets/img/logo-protectcube.png" alt="Logo" width="20" height="20" />
       </a>
     </div>
     <nav class="menu">

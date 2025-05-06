@@ -2,44 +2,87 @@
   <div class="hero-container">
     <div class="hero-content">
       <div class="hero-text">
-        <br />
-        <span class="typing-text fade-in delay-1">QUALITA INDONESIA<span class="peace"></span></span>
         
-        <p class="fade-in delay-2">
-          Established in 2012, Qualita Indonesia is becoming a well known company with series of reputable competences to meet stakeholder's high expectation.
+        <h1 class="headline fade-in delay-2">Secure every device.<br>Anywhere. Anytime.</h1>
+        <p class="subtitle fade-in delay-3">
+          Real-time monitoring and customizable security features for all your devices, 
+          even in hard-to-reach locations.
+        </p>
+        <p class="subtitle fade-in delay-3">
+          
         </p>
         
-        <div class="cta-buttons fade-in delay-3">
-          <a href="#features" class="btn-about">Explore More</a>
-         
+        <div class="cta-buttons fade-in delay-4">
+          <a href="#features" class="btn-primary">Explore Features</a>
+          <a href="#contact" class="btn-secondary">Contact Us</a>
+        </div>
+        
+        <div class="trust-badges fade-in delay-5">
+          <div class="badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Enterprise-grade Security</span>
+          </div>
+          <div class="badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.8 11.3L2 22l10.7-3.79"></path><path d="M4 3h.01M22 8h.01M15 2h.01M22 20h.01M22 2l-2.24 3.35a4 4 0 0 0 4.48 5.3 4 4 0 0 0-1.38 3.75 4 4 0 0 0-5.18 1.28 4 4 0 0 0-5.3-4.48A4 4 0 0 0 8.6 7.47a4 4 0 0 0-3.75 1.38 4 4 0 0 0-1.28-5.18"></path></svg>
+            <span>24/7 Monitoring</span>
+          </div>
+          <div class="badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10V3"></path><path d="M12 21v-3"></path><path d="M3 12h7"></path><path d="M21 12h-3"></path><path d="m12 21 8.5-8.5"></path><path d="M4.5 12 12 4.5"></path></svg>
+            <span>Global Coverage</span>
+          </div>
         </div>
       </div>
       
       <div class="hero-image fade-in delay-4">
-        <dotlottie-player src="https://lottie.host/c121033c-2f02-4f67-8048-c50ccec78c0d/kVYKm4FHjZ.lottie" background="transparent" speed="1" style="width: 400px; height: 400px" loop autoplay></dotlottie-player>
+        <div class="image-container">
+          <dotlottie-player
+            src="https://lottie.host/4f592bd6-065d-47df-a4c2-876dfcc2ebf2/c1SPlpsnEn.lottie"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></dotlottie-player>
+          
+          <div class="floating-card card-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg>
+            <span>Multiple Sensors</span>
+          </div>
+          
+          <div class="floating-card card-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            <span>Detailed Reports</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  
+  <div class="hero-bg-elements">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
 </section>
 
-
 <style>
+
+
   /* Hero Section */
   .hero {
-    background: var(--container-color);
+    background: var(--bg-color);
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 3rem 1rem;
+    padding: 5rem 2rem;
     position: relative;
     overflow: hidden;
   }
 
   .hero-container {
-    max-width: 1000px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    color: var(--text-header);
+    color: var(--bg-color);
     position: relative;
     z-index: 1;
   }
@@ -48,113 +91,238 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 4rem;
   }
 
+  /* Text Section */
   .hero-text {
     flex: 1;
     text-align: left;
   }
 
+  .logo {
+    height: 60px;
+    margin-bottom: 2rem;
+  }
+
+  .headline {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+  }
+
+  /* Button Styles */
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(67, 97, 238, 0.4);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-light);
+  }
+
+  .btn-secondary:hover {
+    background: var(--primary-light);
+    transform: translateY(-3px);
+  }
+
+  /* Trust Badges */
+  .trust-badges {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .badge svg {
+    color: var(--primary-color);
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Image Section */
   .hero-image {
     flex: 1;
+    position: relative;
+  }
+
+  .image-container {
+    position: relative;
+    height: 500px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .hero-image img {
-    max-width: 100%;
+  .image-container dotlottie-player {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+  }
+
+  /* Floating cards */
+  .floating-card {
+    position: absolute;
+    background: white;
+    padding: 12px 20px;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-  }
-
-  .hero-image img:hover {
-    transform: scale(1.02);
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    font-weight: 800;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    font-weight: 800;
-    color: var(--text-color);
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 0 3rem 0;
-   
-  }
-
-  .typing-text {
-  
-    font-weight: bold;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin-bottom: 1.5rem;
-  }
-  
-  .typing-text-sub {
-    color: var(--light);
-    font-weight: bold;
-    font-size: 1.3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .peace {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-  
-  .typing-text:hover .peace {
-    transform: rotate(15deg);
-  }
-
-  /* Buttons styling */
-  .cta-buttons {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--shadow-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    animation: float 6s ease-in-out infinite;
   }
 
+  .floating-card svg {
+    color: var(--primary-color);
+  }
+
+  .card-1 {
+    top: 20%;
+    left: 0;
+    animation-delay: 0s;
+  }
+
+  .card-2 {
+    bottom: 25%;
+    right: 5%;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+
+  /* Background Elements */
+  .hero-bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .blob {
+    position: absolute;
+    background: linear-gradient(135deg, var(--primary-light), rgba(76, 201, 240, 0.1));
+    border-radius: 50%;
+    filter: blur(70px);
+  }
+
+  .blob-1 {
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    right: -100px;
+    opacity: 0.4;
+  }
+
+  .blob-2 {
+    width: 600px;
+    height: 600px;
+    bottom: -300px;
+    left: -200px;
+    opacity: 0.3;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(to right, rgba(67, 97, 238, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(67, 97, 238, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
 
   /* Animation classes */
   .fade-in {
     opacity: 0;
-    animation: fadeIn 1s ease forwards;
-  }
-
-  .delay-4 {
-    animation-delay: 0.4s;
+    transform: translateY(20px);
+    animation: fadeIn 0.7s ease forwards;
   }
 
   @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  @keyframes wave {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
-    60% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
-  }
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+  .delay-4 { animation-delay: 0.8s; }
+  .delay-5 { animation-delay: 1s; }
 
   /* Responsive Design */
+  @media (max-width: 1100px) {
+    .hero-content {
+      gap: 2rem;
+    }
+    
+    .headline {
+      font-size: 2.5rem;
+    }
+  }
+
   @media (max-width: 992px) {
     .hero-content {
       flex-direction: column;
@@ -166,56 +334,69 @@
     
     .hero-text {
       text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .subtitle {
+      margin: 0 auto 2.5rem auto;
     }
     
     .cta-buttons {
       justify-content: center;
     }
     
-    .hero p {
-      margin: 0 auto 3rem auto;
+    .trust-badges {
+      justify-content: center;
+    }
+    
+    .image-container {
+      height: 400px;
     }
   }
 
   @media (max-width: 768px) {
-    .typing-text {
-      font-size: 2rem;
-      text-align: center;
-    }
-    
-    .hero p {
-      font-size: 1.0rem;
-    }
-    
     .hero {
-      padding: 6rem 1rem;
+      padding: 6rem 1.5rem;
+    }
+    
+    .headline {
+      font-size: 2rem;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 2.5rem auto;
+    }
+    
+    .btn-primary, .btn-secondary {
+      width: 100%;
+    }
+    
+    .floating-card {
+      display: none;
     }
   }
 
-  .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.5s ease forwards;
+  @media (max-width: 480px) {
+    .headline {
+      font-size: 1.75rem;
     }
-  
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    
+    .trust-badges {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
     }
-  
-    .delay-1 {
-      animation-delay: 0.2s;
+    
+    .logo {
+      height: 45px;
+      margin-bottom: 1.5rem;
     }
-    .delay-2 {
-      animation-delay: 0.4s;
-    }
-    .delay-3 {
-      animation-delay: 0.6s;
-    }
-    .delay-4 {
-      animation-delay: 0.8s;
-    }
-  
+  }
 </style>
