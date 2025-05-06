@@ -1,306 +1,348 @@
 ---
-// ServiceSection.astro
+
 ---
 
-<section class="services-section">
+<section class="product-showcase">
   <div class="container">
-    <div class="services-header" id="about">
-         <img src="/assets/img/qualita_indonesia_logo.png" alt="Qualita Indonesia Logo" class="logo-img animate-element fade-up" />
-      
-      <p class="animate-element fade-up">Established in 2012, Qualita Indonesia is becoming a well known company with series of reputable competences to meet stakeholder's high expectation.
-        </p>
-    </div>
-
-    <div class="services-layout">
-      <div class="services-grid">
-        <div class="service-card animate-element fade-in-right">
-          <div class="service-icon red">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-            </svg>
-          </div>
-          <div class="service-content">
-            <h3>Technical Service Management</h3>
-            <p>Field Service, Helpdesk, Technical Support</p>
-          </div>
-        </div>
-
-        <div class="service-card animate-element fade-in-right">
-          <div class="service-icon blue">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-          </div>
-          <div class="service-content">
-            <h3>Project Management</h3>
-            <p>Project Deployment, Project Administration</p>
-          </div>
-        </div>
-
-        <div class="service-card animate-element fade-in-right">
-          <div class="service-icon yellow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-          </div>
-          <div class="service-content">
-            <h3>Management Service</h3>
-            <p>Professional Manpower, Monitoring, Service Level Agreement</p>
-          </div>
-        </div>
-
-        <div class="service-card animate-element fade-in-right">
-          <div class="service-icon red">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-            </svg>
-          </div>
-          <div class="service-content">
-            <h3>IT Management</h3>
-            <p>Field Monitoring Application, IoT Security Solution</p>
-          </div>
-        </div>
-
-        <div class="service-card animate-element fade-in-right">
-          <div class="service-icon blue">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div class="service-content">
-            <h3>Repair Centre & Warehouse</h3>
-            <p>Repair Services, Sparepart Management, Warehouse Management</p>
-          </div>
+    <div class="product-grid">
+      <!-- Excellence Section -->
+      <div class="excellence-section" id="excellence">
+        <div class="content-wrapper animate-element fade-up">
+          <h2>Just Take A Look At Our Excellence</h2>
+          <p>
+            protectQube is ideal for monitoring devices that are difficult to 
+            monitor due to their widespread location and hard to reach 
+            locations.
+          </p>
+          <p>
+            protectQube will provide convenience to ensure the safety of your 
+            device supported by a 24 hour uninterrupted monitoring system 
+            that is made specifically to suit your needs. The protectQube 
+            monitoring system is easy to use with an attractive user interface 
+            and is equipped with various types of accurate and real-time 
+            reports.
+          </p>
+          <a href="#about-product" class="cta-button">ABOUT PRODUCT</a>
         </div>
       </div>
-      
-      <!-- <div class="lottie-container animate-element fade-in-left">
-       <img src="/assets/img/qualita_indonesia_logo.png" alt="Qualita Indonesia Logo" class="logo-img" />
-     
-      </div> -->
+
+      <!-- Product Images -->
+      <div class="product-images animate-element fade-in-left">
+        <div class="image-grid">
+          <div class="image-hexagon hex-1">
+            <img src="https://protectqube.com/wp-content/uploads/2025/01/as1-removebg-preview-300x246.png" alt="Circuit Board" class="product-image" />
+          </div>
+          <!-- <div class="image-hexagon hex-2">
+            <img src="/assets/img/product-device.jpg" alt="Monitoring Device" class="product-image" />
+          </div>
+          <div class="image-hexagon hex-3">
+            <img src="/assets/img/product-server.jpg" alt="Server Equipment" class="product-image" />
+          </div> -->
+        </div>
+      </div>
     </div>
+
+   
   </div>
 </section>
 
-<script src="/src/components/js/services.js"></script>
+<script>
+  // Intersection Observer for Animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Observe all elements with animate-element class
+    document.querySelectorAll('.animate-element').forEach((element) => {
+      observer.observe(element);
+    });
+
+    // Product image hover effect
+    const hexagons = document.querySelectorAll('.image-hexagon');
+    hexagons.forEach((hex) => {
+      hex.addEventListener('mouseenter', () => {
+        hex.classList.add('hex-hover');
+      });
+      hex.addEventListener('mouseleave', () => {
+        hex.classList.remove('hex-hover');
+      });
+    });
+  });
+</script>
 
 <style>
-  .services-section {
-    padding: 6rem 0;
-    background: var(--service-container);
-    position: relative;
+  .product-showcase {
+    padding: 7rem 0;
+    background: var(--bg-color, #f8fafc);
     overflow: hidden;
+    position: relative;
   }
-
+  
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 8rem;
+  }
+
+  .excellence-section {
     position: relative;
     z-index: 2;
   }
 
-  .services-header {
-    text-align: center;
-    margin-bottom: 4rem;
+  .excellence-section h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-color, #111827);
+    line-height: 1.2;
+    background: var(--primary-color, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  .services-header h2 {
+  .excellence-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color, #4b5563);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: linear-gradient(to right, #f97316, #ea580c);
+    color: white;
+    font-weight: 600;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 20px -3px rgba(249, 115, 22, 0.4);
+  }
+
+  .cta-button:active {
+    transform: translateY(1px);
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ea580c, #f97316);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .cta-button:hover::before {
+    opacity: 1;
+  }
+
+  .product-images {
+    position: relative;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-areas:
+      "hex1 hex2"
+      "hex3 hex2";
+    gap: 1.5rem;
+    transform: translateX(5%);
+  }
+
+  .image-hexagon {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .hex-1 {
+    grid-area: hex1;
+  }
+
+  .hex-2 {
+    grid-area: hex2;
+    margin-top: -2rem;
+  }
+
+  .hex-3 {
+    grid-area: hex3;
+  }
+
+  .hex-hover {
+    transform: scale(1.05);
+    z-index: 5;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+  }
+
+  /* Use Case Section */
+  .use-case-section {
+    margin-top: 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--heading-color);
     margin-bottom: 1rem;
+    color: var(--heading-color, #111827);
     position: relative;
     display: inline-block;
   }
 
-  .services-header h2::after {
+  .section-header h2::after {
     content: '';
     position: absolute;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background: linear-gradient(to right, #4338ca, #ec4899);
-    border-radius: 3px;
-    transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .services-header h2.animate::after {
     width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    border-radius: 3px;
   }
 
-  .services-header p {
-    max-width: 36rem;
+  .section-header p {
+    font-size: 1.2rem;
+    color: var(--text-color, #4b5563);
+    max-width: 700px;
     margin: 1.5rem auto 0;
-    color: var(--text-secondary, #6b7280);
-    font-size: 1.1rem;
-    line-height: 1.6;
   }
 
-  .services-layout {
-    display: flex;
+  .use-case-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
-    justify-content: space-between;
   }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    flex: 1;
+  .use-case-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  .service-card {
-    background: var(--color-card, white);
-    padding: 1.75rem;
-    border-radius: 1rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  .use-case-list li {
     display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    will-change: transform;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 4px solid #3b82f6;
   }
 
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 0;
-    background: var(--icon-color, #4338ca);
-    transition: height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  .use-case-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
 
-  .service-card.card-hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-
-  .service-card.card-hover::before {
-    height: 100%;
-  }
-
-  .service-icon {
+  .use-case-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #3b82f6, #2563eb);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-    margin-right: 1.25rem;
-    color: white;
+    margin-right: 1rem;
     flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .card-hover .service-icon {
-    transform: scale(1.1);
+  .use-case-icon svg {
+    width: 20px;
+    height: 20px;
+    color: white;
   }
 
-  .service-icon svg {
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
-    transition: transform 0.3s ease;
-  }
-
-  .card-hover .service-icon svg {
-    transform: scale(1.1);
-  }
-
-  .service-icon.red {
-    background: linear-gradient(135deg, #ff6b6b, #ee5253);
-  }
-
-  .service-icon.blue {
-    background: linear-gradient(135deg, #48a0f9, #3b82f6);
-  }
-
-  .service-icon.yellow {
-    background: linear-gradient(135deg, #feca57, #f59e0b);
-  }
-
-  .service-content {
-    flex: 1;
-  }
-
-  .service-content h3 {
-    font-size: 1.25rem;
+  .use-case-list li span {
     font-weight: 600;
-    color: var(--heading-color, #1f2937);
-    margin-bottom: 0.75rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-
-  .card-hover .service-content h3 {
-    color: #4338ca;
-    transform: translateX(5px);
-  }
-
-  .service-content p {
-    color: var(--text-body, #6b7280);
+    color: var(--heading-color, #111827);
     font-size: 1rem;
-    line-height: 1.6;
-    transition: transform 0.3s ease;
   }
 
-  .card-hover .service-content p {
-    transform: translateX(5px);
-  }
-
-  .lottie-container {
-    width: 400px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .use-case-image {
     position: relative;
-    animation: float 6s ease-in-out infinite;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   }
 
-  .lottie-container::before {
-    content: '';
+  .use-case-image img {
+    width: 100%;
+    border-radius: 1rem;
+    transition: all 0.5s ease;
+  }
+
+  .use-case-image:hover img {
+    transform: scale(1.03);
+  }
+
+  .decorative-circle {
     position: absolute;
+    bottom: -80px;
+    right: -80px;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 70%);
+    background: linear-gradient(135deg, #f97316 0%, rgba(249, 115, 22, 0.2) 100%);
     z-index: -1;
-    animation: pulse 3s infinite;
   }
 
-  dotlottie-player {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.08));
+  .rounded-image {
+    border-radius: 1rem;
+    overflow: hidden;
   }
 
-  /* Animation Keyframes */
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(0.95); opacity: 0.7; }
-    50% { transform: scale(1.05); opacity: 0.9; }
-    100% { transform: scale(0.95); opacity: 0.7; }
-  }
-
-  /* Entrance Animations */
+  /* Animation Classes */
   .animate-element {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
 
   .animate-element.animate {
@@ -320,75 +362,74 @@
     transform: translateX(50px);
   }
 
-  /* Staggered animations for service cards */
-  .service-card:nth-child(1).animate { transition-delay: 0.1s; }
-  .service-card:nth-child(2).animate { transition-delay: 0.2s; }
-  .service-card:nth-child(3).animate { transition-delay: 0.3s; }
-  .service-card:nth-child(4).animate { transition-delay: 0.4s; }
-  .service-card:nth-child(5).animate { transition-delay: 0.5s; }
-
-  /* Exit animation with fade-out */
-  .exit {
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  /* Responsive styles */
-  @media (max-width: 1100px) {
-    .services-layout {
-      flex-direction: column;
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+      gap: 4rem;
     }
-    
-    .lottie-container {
+
+    .use-case-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .use-case-image {
       order: -1;
-      margin-bottom: 3rem;
-      width: 350px;
-      height: 350px;
+    }
+
+    .excellence-section h2 {
+      font-size: 2.4rem;
     }
   }
 
   @media (max-width: 768px) {
-    .services-grid {
-      grid-template-columns: 1fr;
+    .product-showcase {
+      padding: 5rem 0;
     }
-    
-    .services-header h2 {
+
+    .excellence-section h2 {
       font-size: 2rem;
     }
-    
-    .lottie-container {
-      width: 300px;
-      height: 300px;
+
+    .image-grid {
+      grid-template-areas:
+        "hex1"
+        "hex2"
+        "hex3";
+      transform: translateX(0);
+    }
+
+    .hex-2 {
+      margin-top: 0;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
     }
   }
 
   @media (max-width: 480px) {
-    .service-card {
-      flex-direction: column;
-      align-items: flex-start;
+    .excellence-section h2 {
+      font-size: 1.8rem;
     }
-    
-    .service-icon {
-      margin-right: 0;
-      margin-bottom: 1rem;
+
+    .cta-button {
+      width: 100%;
+      text-align: center;
     }
-    
-    .lottie-container {
-      width: 250px;
-      height: 250px;
+
+    .use-case-list li {
+      padding: 0.75rem 1rem;
+    }
+
+    .use-case-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .use-case-list li span {
+      font-size: 0.9rem;
     }
   }
-
-
-  .services-header {
-  text-align: center;
-}
-
-.services-header .logo-img {
-  max-width: 200px; /* Bisa disesuaikan */
-  height: auto;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
 </style>
