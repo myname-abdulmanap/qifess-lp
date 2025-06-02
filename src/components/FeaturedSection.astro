@@ -1,833 +1,453 @@
 ---
-// FeaturesSection.astro with enhanced animations and modern design
+// FeaturesSection.astro - Elegant modern design for Qifess Field Service
 ---
 
 <section class="features" id="features">
-  <div class="features-container animate-element">
-    <div class="bg-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-      <div class="shape shape-4"></div>
-      <div class="shape shape-dots"></div>
-      <div class="shape shape-circle"></div>
-      <div class="shape shape-waves"></div>
-      <div class="shape shape-lines"></div>
+  <div class="features-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">Features</h2>
+      <p class="section-description">
+        Fits everything on all your devices. Access all your field service management 
+        features seamlessly on any device—desktop, tablet, or smartphone—anytime, anywhere.
+      </p>
     </div>
-    <div class="features-split-layout">
-      <!-- Left Column with Lottie Animation -->
-      <div class="lottie-container">
-        <dotlottie-player
-          src="https://lottie.host/2d1d222f-0e42-4955-848c-d56e32b59820/M2AvhOyqwD.lottie"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-          class="lottie-player"
-        ></dotlottie-player>
-        <div class="glow-effect"></div>
-      </div>
-      
-      <!-- Right Column with Features -->
-      <div class="features-content-column">
-        <div class="section-header reveal-element">
-          <h2 class="animate-title">Features</h2>
-          <p class="animate-text">protectQube is designed to safeguard your devices with real-time monitoring, 
-             smart alerts, and a user-friendly interface. Whether your equipment is in
-             remote or hard-to-reach locations, protectQube ensures optimal protection
-             with reliable connectivity and advanced features tailored to your needs.</p>
+
+    <!-- YouTube Video Section -->
+    <div class="video-section">
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/Yvhv0lMx4dk" 
+            title="Qifess Field Service Demo" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
+        <div class="video-overlay"></div>
       </div>
     </div>
-    
+
     <!-- Features Grid -->
-    <div class="features-grid-container reveal-element">
-      <!-- Feature Card 1 -->
-      <div class="feature-card reveal-card" data-delay="0">
-        <div class="feature-card-inner">
-          <div class="feature-icon-container">
-            <div class="feature-icon-wrapper" style="--icon-color: #ca3838;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 128 128">
-                <path fill="#ff7f0e" d="M112.39 6.389a6.7 6.7 0 0 0-2.585.416c-3.428 1.266-5.232 5.008-4.033 8.357c1.2 3.35 4.952 5.039 8.38 3.772v-.002c3.427-1.267 5.233-5.007 4.032-8.354c-.901-2.513-3.237-4.092-5.793-4.19zM72.6 33.059a19.3 19.3 0 0 0-6.506 1.207c-9.84 3.636-15.023 14.377-11.576 23.992c3.445 9.615 14.217 14.461 24.054 10.826c9.841-3.634 15.024-14.378 11.578-23.992c-2.69-7.512-9.853-12.113-17.55-12.033m-51.856 31.67a6.7 6.7 0 0 0-2.586.416c-3.429 1.267-5.233 5.009-4.033 8.357c1.201 3.35 4.952 5.038 8.379 3.771c3.429-1.267 5.231-5.008 4.031-8.357c-.9-2.511-3.234-4.09-5.79-4.188zm71.807 36.39a9.2 9.2 0 0 0-3.553.572c-4.71 1.74-7.191 6.882-5.543 11.483c1.65 4.603 6.806 6.923 11.514 5.183h.002c4.71-1.74 7.191-6.883 5.54-11.484c-1.237-3.452-4.446-5.62-7.96-5.754" />
-                <path fill="#2c7fb8" d="M112.709.008a13.35 13.35 0 0 0-9.396 3.433c-4.613 4.16-5.611 10.839-2.715 15.94l-7.776 7.002a32.4 32.4 0 0 0-18.312-6.574a33 33 0 0 0-12.766 2.033C45.761 27.748 36.87 44.689 41.047 60.588l-9.69 3.584c-2.254-3.508-6.105-5.663-10.254-5.83a13.2 13.2 0 0 0-3.302.34l-1.979-5.58c3.314-2.07 4.918-6.184 3.586-9.944l.002-.002c-1.151-3.246-4.174-5.293-7.463-5.437a8.6 8.6 0 0 0-3.318.515c-4.386 1.604-6.742 6.412-5.207 10.743c1.33 3.753 5.161 5.898 9.013 5.359l1.965 5.543c-5.7 2.998-8.565 9.74-6.373 15.855c2.39 6.664 9.893 10.022 16.641 7.528c5.843-2.16 9.321-8.016 8.6-13.873l9.66-3.569c6.355 13.711 21.803 20.877 36.687 17.283l3.998 11.155a18.6 18.6 0 0 0-8.922 10.601L69.414 104a8.206 8.206 0 0 0-6.896-7.797c-4.576-.747-8.992 2.32-9.864 6.861c-.871 4.54 2.185 8.885 6.762 9.631c3.973.649 7.82-1.578 9.336-5.15l5.166.842c-.304 2.62-.05 5.331.892 7.96c3.334 9.304 13.808 13.984 23.231 10.503c9.421-3.481 14.453-13.842 11.117-23.147a17.3 17.3 0 0 0-5.021-7.295l10.59-18.412l-.05-.027c3.783.788 7.795-1.098 9.536-4.725c2.034-4.158.212-9.228-4.002-11.078h-.004a8.4 8.4 0 0 0-3.25-.732h-.002c-2.648-.059-5.227 1.14-6.924 3.244l-6.678-3.207c2.243-6.597 2.403-13.899-.097-20.875A30.9 30.9 0 0 0 96.95 30.14l7.393-6.659c4.856 3.372 11.67 3.015 16.299-1.162c5.34-4.816 5.85-13.017 1.056-18.226c-2.398-2.605-5.661-3.972-8.99-4.086zm-.135 3.455c2.442.08 4.823 1.086 6.569 2.982c3.49 3.793 3.156 9.705-.827 13.297c-3.981 3.593-10.012 3.37-13.504-.422c-3.49-3.793-3.158-9.705.827-13.299a9.86 9.86 0 0 1 6.935-2.556zm-38.312 23.09c10.022.362 19.097 6.525 22.611 16.332c4.687 13.076-2.338 27.727-15.857 32.722v.002h-.002c-13.522 4.995-28.092-1.607-32.778-14.681c-4.685-13.075 2.34-27.727 15.86-32.723a26.5 26.5 0 0 1 10.166-1.652M11.857 39.959c2.415.093 4.59 1.584 5.428 3.947l-.002.002c1.118 3.152-.583 6.676-3.853 7.871c-3.272 1.198-6.768-.402-7.885-3.554c-1.118-3.153.585-6.677 3.857-7.873h.002a6.4 6.4 0 0 1 2.453-.393m9.12 21.836c3.723.131 7.08 2.42 8.384 6.057c1.739 4.849-.864 10.29-5.898 12.15s-10.428-.59-12.166-5.44c-1.74-4.849.865-10.29 5.898-12.15a9.9 9.9 0 0 1 3.782-.617m95.92 1.89a6.2 6.2 0 0 1 2.393.538l.008.002c3.054 1.335 4.38 4.991 2.89 8.03l-.003.01c-1.487 3.1-5.214 4.481-8.307 3.098l-.008-.004c-3.054-1.335-4.38-4.993-2.89-8.033l.003-.008c1.116-2.325 3.49-3.682 5.912-3.633zm-14.96 1.33l6.446 2.882c-.83 3.22.386 6.662 3.035 8.622l-10.252 17.823a18.2 18.2 0 0 0-8.101-2.28a18 18 0 0 0-1.956.116L86.894 80.42a33.3 33.3 0 0 0 15.043-15.404zm-9.05 31.87c5.197.183 9.89 3.375 11.709 8.453c2.428 6.77-1.206 14.37-8.235 16.967c-7.03 2.597-14.562-.824-16.988-7.594c-2.428-6.772 1.206-14.37 8.236-16.965a13.8 13.8 0 0 1 5.278-.861M60.898 98.35q.622-.026 1.256.076h.002c3.379.553 5.55 3.646 4.909 6.984c-.642 3.341-3.908 5.615-7.288 5.063s-5.552-3.646-4.91-6.985c.562-2.923 3.133-5.026 6.031-5.138" />
-              </svg>
-            </div>
-          </div>
-          <div class="feature-content">
-            <h3>Multiple Interface I/O Sensor</h3>
-            <p>Supports various input/output sensors for enhanced security and adaptability.</p>
-          </div>
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3H21V17H3V3Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M7 21H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 17V21" stroke="currentColor" stroke-width="2"/>
+            <rect x="5" y="5" width="14" height="10" rx="1" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 9H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 11H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
-      </div>
-      
-      <!-- Feature Card 2 -->
-      <div class="feature-card reveal-card" data-delay="150">
-        <div class="feature-card-inner">
-          <div class="feature-icon-container">
-            <div class="feature-icon-wrapper" style="--icon-color: #ca3838;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 48 48">
-                <path fill="none" stroke="#c33300" stroke-linecap="round" stroke-linejoin="round" d="M26.642 30.238c4.887.427 8.519 2.01 8.519 3.893c0 2.215-4.997 4.006-11.161 4.006c-6.16 0-11.16-1.791-11.16-4.006c0-1.882 3.628-3.466 8.518-3.893m-11.3 3.893c0-2.786 4.168-5.144 9.894-5.915m8.096 0c5.726.771 9.894 3.13 9.894 5.919v3.186c0 3.413-6.243 6.18-13.942 6.18s-13.942-2.767-13.942-6.18v-3.186c0 3.412 6.243 6.179 13.942 6.179s13.942-2.766 13.942-6.18M28.857 15.12A4.85 4.85 0 0 1 24 19.958a4.85 4.85 0 0 1-4.857-4.838c-.002-2.674 2.171-4.843 4.853-4.845H24c2.682 0 4.857 2.168 4.857 4.841zm-16.006.477c0 1.44.26 2.819.774 4.078c1.433 3.488 7.484 8.261 10.375 15.62c2.895-7.359 8.942-12.132 10.375-15.62c2.241-5.715-.574-12.166-6.289-14.407A11.1 11.1 0 0 0 24 4.5c-6.139-.019-11.13 4.942-11.15 11.081z" stroke-width="1" />
-              </svg>
-            </div>
-          </div>
-          <div class="feature-content">
-            <h3>GPS Tracking</h3>
-            <p>Real-time location tracking to monitor and secure your devices anytime, anywhere.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Feature Card 3 -->
-      <div class="feature-card reveal-card" data-delay="300">
-        <div class="feature-card-inner">
-          <div class="feature-icon-container">
-            <div class="feature-icon-wrapper" style="--icon-color: #ca3838;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 32 32"><g fill="none"><path fill="url(#f697id0)" d="m16.725 3.803l-8.158 13.53a.464.464 0 0 0 .398.703h4.127c.307 0 .557.25.557.557v8.638h-.491v2.34h.752a.27.27 0 0 0 .255-.134l9.073-14.865a.279.279 0 0 0-.237-.424h-4.709a.464.464 0 0 1-.464-.464V2.975a.276.276 0 0 0-.262-.278l-.841-.001z"/><g filter="url(#f697id6)"><path fill="url(#f697id1)" d="M16.493 2.831L7.75 17.332a.464.464 0 0 0 .397.704h4.127c.308 0 .557.25.557.557v10.7c0 .28.37.384.516.144l9.074-14.865a.279.279 0 0 0-.238-.424h-4.709a.464.464 0 0 1-.464-.464V2.975c0-.282-.371-.385-.517-.144"/></g><path fill="url(#f697id2)" d="M16.493 2.831L7.75 17.332a.464.464 0 0 0 .397.704h4.127c.308 0 .557.25.557.557v10.7c0 .28.37.384.516.144l9.074-14.865a.279.279 0 0 0-.238-.424h-4.709a.464.464 0 0 1-.464-.464V2.975c0-.282-.371-.385-.517-.144"/><path fill="url(#f697id4)" d="M16.493 2.831L7.75 17.332a.464.464 0 0 0 .397.704h4.127c.308 0 .557.25.557.557v10.7c0 .28.37.384.516.144l9.074-14.865a.279.279 0 0 0-.238-.424h-4.709a.464.464 0 0 1-.464-.464V2.975c0-.282-.371-.385-.517-.144"/><path fill="url(#f697id3)" d="M16.493 2.831L7.75 17.332a.464.464 0 0 0 .397.704h4.127c.308 0 .557.25.557.557v10.7c0 .28.37.384.516.144l9.074-14.865a.279.279 0 0 0-.238-.424h-4.709a.464.464 0 0 1-.464-.464V2.975c0-.282-.371-.385-.517-.144"/><path fill="url(#f697id5)" d="M16.493 2.831L7.75 17.332a.464.464 0 0 0 .397.704h4.127c.308 0 .557.25.557.557v10.7c0 .28.37.384.516.144l9.074-14.865a.279.279 0 0 0-.238-.424h-4.709a.464.464 0 0 1-.464-.464V2.975c0-.282-.371-.385-.517-.144"/><defs><linearGradient id="f697id0" x1="18.407" x2="18.407" y1="7.966" y2="23.712" gradientUnits="userSpaceOnUse"><stop stop-color="#ffbd61"/><stop offset="1" stop-color="#eb5c74"/></linearGradient><linearGradient id="f697id1" x1="15.072" x2="15.072" y1="11.05" y2="26.586" gradientUnits="userSpaceOnUse"><stop stop-color="#ffa547"/><stop offset="1" stop-color="#f14b49"/></linearGradient><linearGradient id="f697id2" x1="15.072" x2="15.072" y1="2.696" y2="13.761" gradientUnits="userSpaceOnUse"><stop stop-color="#df9844"/><stop offset="1" stop-color="#df9844" stop-opacity="0"/></linearGradient><linearGradient id="f697id3" x1="13.063" x2="13.493" y1="8.372" y2="8.63" gradientUnits="userSpaceOnUse"><stop stop-color="#c76c38"/><stop offset="1" stop-color="#c76c38" stop-opacity="0"/></linearGradient><radialGradient id="f697id4" cx="0" cy="0" r="1" gradientTransform="matrix(0 6.45595 -1.40857 0 17.1 7.924)" gradientUnits="userSpaceOnUse"><stop stop-color="#fe9052"/><stop offset="1" stop-color="#fe9052" stop-opacity="0"/></radialGradient><radialGradient id="f697id5" cx="0" cy="0" r="1" gradientTransform="matrix(0 6.6875 -2.4375 0 17.157 7.716)" gradientUnits="userSpaceOnUse"><stop stop-color="#ffb54b"/><stop offset="1" stop-color="#ffb54b" stop-opacity="0"/></radialGradient><filter id="f697id6" width="14.78" height="26.875" x="7.682" y="2.696" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset/><feGaussianBlur stdDeviation=".25"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.968627 0 0 0 0 0.431373 0 0 0 0 0.337255 0 0 0 1 0"/><feBlend in2="shape" result="effect1_innerShadow_18_15539"/></filter></defs></g></svg>
-            </div>
-          </div>
-          <div class="feature-content">
-            <h3>Voltage Monitoring</h3>
-            <p>Continuously tracks power levels to prevent unexpected shutdowns or failures.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Feature Card 4 -->
-      <div class="feature-card reveal-card" data-delay="450">
-        <div class="feature-card-inner">
-          <div class="feature-icon-container">
-            <div class="feature-icon-wrapper" style="--icon-color: #ca3838;">
-             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 128 128"><path fill="#ed6c30" d="m35.52 21.24l4.81 92.47c0 7.82 10.6 14.15 23.67 14.15s23.66-6.33 23.66-14.15l4.81-92.47z"/><ellipse cx="64" cy="20.43" fill="#fff" rx="22.38" ry="12.12"/><path fill="#78a3ad" d="M64 4.22c-15.73 0-28.48 7.62-28.48 17.03c0 9.4 12.75 17.02 28.48 17.02c15.72 0 28.48-7.62 28.48-17.02c0-9.41-12.76-17.03-28.48-17.03m0 28.33c-12.36 0-22.38-5.43-22.38-12.12S51.64 8.31 64 8.31s22.38 5.43 22.38 12.12c0 6.7-10.02 12.12-22.38 12.12"/><path fill="#999" d="M75.13 10.22C72.16 8.65 68.27 7.7 64 7.7s-8.16.95-11.13 2.52h-5.74v7.15h.03c-.01.14-.03.27-.03.41c0 5.57 7.55 10.08 16.87 10.08c9.09 0 16.47-4.3 16.83-9.68h.03v-7.97h-5.73z"/><path fill="#78a3ad" d="M75.13 10.22C72.16 8.65 68.27 7.7 64 7.7s-8.16.95-11.13 2.52h-5.74v7.15h.03c-.01.14-.03.27-.03.41c0 5.57 7.55 10.08 16.87 10.08c9.09 0 16.47-4.3 16.83-9.68h.03v-7.97h-5.73z"/><ellipse cx="64" cy="9.74" fill="#fff" rx="10.95" ry="5.93"/><path fill="#78a3ad" d="M64 .14c-9.32 0-16.87 4.51-16.87 10.09c0 5.57 7.55 10.08 16.87 10.08c9.31 0 16.87-4.51 16.87-10.08C80.87 4.65 73.31.14 64 .14m0 15.53c-6.05 0-10.95-2.65-10.95-5.93S57.95 3.81 64 3.81s10.95 2.65 10.95 5.93c0 3.27-4.9 5.93-10.95 5.93"/><path fill="#fff" d="M74.91 52.43c-.83-1.85-3.03-2.25-4.84-2.39c-.67-.05-1.72.15-1.86-.78q-.075-.525-.12-1.05c-.06-.53-.08-1.06-.17-1.58c-.15-.9-.7-1.91-1.43-2.64c-.49-.49-1.08-.86-1.69-.99c-.97-.2-2.07-.1-2.99.31c-1.89.85-2.25 3.09-2.4 4.93c-.03.37-.02.73-.05 1.09c-.02.25-.09.49-.32.62a.9.9 0 0 1-.32.11l-.81.09c-.4.04-.81.06-1.21.12c-.94.15-2.1.53-2.84 1.1c-.64.48-1.22 1.14-1.42 1.91c-.27 1.05-.26 2.23.25 3.21c.96 1.84 3.11 2.18 4.98 2.32c.46.03 1.11-.09 1.49.25c.25.23.24.65.28.96c.05.5.12 1 .2 1.5c.15.94.53 2.1 1.1 2.84c.48.64 1.14 1.22 1.91 1.41c1.05.27 2.23.26 3.21-.25c1.84-.96 2.18-3.11 2.32-4.98c.03-.35-.01-.76.08-1.1c.15-.62.89-.58 1.37-.63c.65-.07 1.31-.16 1.96-.27c.9-.16 1.91-.7 2.64-1.43c.49-.5.86-1.08.99-1.69c.21-.97.1-2.08-.31-2.99m-2.13 60.88c.42-.42.74-.92.85-1.45c.18-.84.08-1.79-.27-2.57c-.95-2.12-3.88-2.02-5.83-2.16c-3.25-.23-6.61-.21-9.83.3c-.81.13-1.8.46-2.44.94c-.55.41-1.05.98-1.22 1.64c-.23.9-.22 1.92.22 2.76c.82 1.58 2.67 1.87 4.28 2c3.82.29 8.18.43 11.97-.23c.78-.14 1.65-.6 2.27-1.23"/></svg>
-            </div>
-          </div>
-          <div class="feature-content">
-            <h3>Backup Battery (Up To 5 Hours)</h3>
-            <p>Ensures uninterrupted operation even during power outages.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Feature Card 5 -->
-      <div class="feature-card reveal-card" data-delay="600">
-        <div class="feature-card-inner">
-          <div class="feature-icon-container">
-            <div class="feature-icon-wrapper" style="--icon-color: #ca3838;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 48 48">
-                <g fill="#c33300">
-                  <path fill-rule="evenodd" d="M35.087 9.408a12 12 0 0 0-2.602-3.893L33.9 4.1a14 14 0 0 1 0 19.8l-1.415-1.415a12 12 0 0 0 2.602-13.077" clip-rule="evenodd" />
-                  <path fill-rule="evenodd" d="M29.543 11.704a6 6 0 0 0-1.3-1.947l1.414-1.414a8 8 0 0 1 0 11.314l-1.414-1.414a6 6 0 0 0 1.3-6.54m-9.786-1.946a6 6 0 0 0 0 8.486l-1.414 1.414a8 8 0 0 1 0-11.314z" clip-rule="evenodd" />
-                  <path fill-rule="evenodd" d="M15.515 5.515a12 12 0 0 0 0 16.97L14.1 23.9a14 14 0 0 1 0-19.8z" clip-rule="evenodd" />
-                  <path d="M26 14a2 2 0 1 1-4 0a2 2 0 0 1 4 0" />
-                  <path fill-rule="evenodd" d="M10 29a3 3 0 0 1 3-3h22a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H13a3 3 0 0 1-3-3zm10.282.04A1 1 0 0 1 21 30v6a1 1 0 1 1 0 2v1a1 1 0 0 1-2 0v-1h-3.5a1 1 0 0 1-.841-1.54l4.5-7a1 1 0 0 1 1.123-.42M19 36v-2.595L17.332 36zm13.753-4.226a1 1 0 0 0-.08-1.412a5.503 5.503 0 1 0 0 8.204a1 1 0 0 0 .334-.745v-3.357a1 1 0 0 0-1-1h-3.002a1 1 0 1 0 0 2h2.002v1.875a3.505 3.505 0 0 1-5.506-2.875a3.503 3.503 0 0 1 5.84-2.611a1 1 0 0 0 1.412-.08" clip-rule="evenodd" />
-                </g>
-              </svg>
-            </div>
-          </div>
-          <div class="feature-content">
-            <h3>4G Connectivity Ready</h3>
-            <p>Provides stable and fast internet access for seamless remote monitoring.</p>
-          </div>
-        </div>
+        <h3>Ticketing System</h3>
+        <p>Manage customer requests with ease by creating, assigning, and tracking service tickets in real-time.</p>
       </div>
 
-
-       <!-- Feature Card 6 -->
-       <div class="feature-card reveal-card" data-delay="600">
-        <div class="feature-card-inner">
-          <div class="feature-icon-container">
-            <div class="feature-icon-wrapper" style="--icon-color: #ca3838;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512">
-                <g fill="#c33300" fill-rule="evenodd" clip-rule="evenodd">
-                  <path d="M426.667 125.489H85.333v20.078h341.334zM85.333 386.508V185.724h341.334v200.784zM42.667 85.332v341.333h426.666V85.332zm320 149.333v128h42.666v-128zm-64 128v-85.333h42.666v85.333zm-64-21.333v21.333h42.666v-21.333z" />
-                  <path d="M170.667 362.665c41.237 0 74.666-33.429 74.666-74.666c0-41.238-33.429-74.667-74.666-74.667c-41.238 0-74.667 33.429-74.667 74.667s33.429 74.666 74.667 74.666m35.476-50.962a42.67 42.67 0 0 0 7.19-23.704h-42.666v-42.667a42.66 42.66 0 0 0-39.419 26.339a42.664 42.664 0 0 0 31.095 58.175a42.67 42.67 0 0 0 43.8-18.143" />
-                </g>
-              </svg>
-            </div>
-          </div>
-          <div class="feature-content">
-            <h3>Dashboard Analytics</h3>
-            <p>Presents a summary of ProtectCube IoT device operational data in both real-time and historical views.</p>
-          </div>
+      <!-- Feature 2 -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6H20L18 20H6L4 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M4 6L2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="9" cy="12" r="1" fill="currentColor"/>
+            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+            <circle cx="15" cy="12" r="1" fill="currentColor"/>
+            <path d="M7 16H17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          </svg>
         </div>
+        <h3>Master Database</h3>
+        <p>Store and access all essential information in one centralized, secure database, ensuring accuracy and efficiency.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 6V2" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 6V2" stroke="currentColor" stroke-width="2"/>
+            <path d="M7 14H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M15 14H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="16" r="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3>Technician Work Schedule</h3>
+        <p>Efficiently plan and manage technician schedules to optimize field service operations and minimize downtime.</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8 4L8 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 4L16 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 8L2 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 16L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>SLA Monitoring</h3>
+        <p>Track and monitor Service Level Agreements to ensure timely response and resolution, improving customer satisfaction.</p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="8" cy="11" r="1" fill="currentColor"/>
+            <circle cx="12" cy="11" r="1" fill="currentColor"/>
+            <circle cx="16" cy="11" r="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3>Sparepart Management</h3>
+        <p>Keep track of spare parts inventory, manage stock levels, and ensure availability for field service operations.</p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 21L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 21V19" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Business Trip Module</h3>
+        <p>Simplify the planning and tracking of business trips for technicians, including travel expenses and schedules.</p>
       </div>
     </div>
   </div>
-  
-  <!-- Floating elements for modern effect -->
-  <div class="floating-element element-1"></div>
-  <div class="floating-element element-2"></div>
-  <div class="floating-element element-3"></div>
-  <div class="floating-element element-4"></div>
-  
-  <!-- Gradient overlay for depth -->
-  <div class="gradient-overlay"></div>
 </section>
 
 <style>
-  /* Base Styles */
   .features {
-    padding: 8rem 2rem;
-    background: var(--bg-color, #f8fafc);
+    padding: 5rem 1rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
     position: relative;
     overflow: hidden;
-    color: var(--color-text, #1e293b);
   }
-  
-  /* Background gradients */
+
   .features::before {
     content: '';
     position: absolute;
-    top: -10%;
-    right: -5%;
-    width: 50%;
-    height: 120%;
-    background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.07), transparent 70%);
-    z-index: 0;
-    pointer-events: none;
-  }
-  
-  .gradient-overlay {
-    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(248, 250, 252, 0.3) 0%, rgba(248, 250, 252, 0) 100%);
-    z-index: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.08) 0%, transparent 50%);
     pointer-events: none;
   }
-  
+
   .features-container {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
   }
-  
-  /* Split Layout Styles */
-  .features-split-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 5rem;
-    align-items: center;
-    margin-bottom: 6rem;
-  }
-  
-  /* Left Column - Animation */
-  .lottie-container {
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    transition: transform 0.6s var(--easeOutBack);
-   
-    backdrop-filter: blur(10px);
-  
-    transform: perspective(1000px) rotateX(2deg);
-  }
-  
-  .lottie-container:hover {
-    transform: perspective(1000px) rotateX(0deg) translateY(-10px);
-  }
-  
-  .lottie-player {
-    width: 100%;
-    min-height: 420px;
-    transition: transform 0.8s ease;
-  }
-  
-  .glow-effect {
-    position: absolute;
-    bottom: -80px;
-    right: -80px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, rgba(67, 56, 202, 0.4), rgba(14, 165, 233, 0.3));
-    filter: blur(60px);
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 1.2s var(--easeOutQuart);
-    z-index: -1;
-  }
-  
-  /* Section Header Styles */
+
   .section-header {
-    margin-bottom: 2.5rem;
-    position: relative;
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-  .animate-title {
-    font-size: 3rem;
+
+  .section-title {
+    font-size: 2.75rem;
     font-weight: 700;
-    color: var(--primary-color, #0f172a);
+    color: #1e293b;
     margin: 0 0 1.5rem 0;
-    position: relative;
-    display: inline-block;
-    transform: translateY(30px);
-    opacity: 0;
-    transition: all 0.8s var(--easeOutBack);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  
-  .animate-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, #ef5c00, #e19e60);
-    border-radius: 4px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.8s var(--easeOutQuart) 0.4s;
-  }
-  
-  .animate-text {
-    font-size: 1.1rem;
+
+  .section-description {
+    font-size: 1.125rem;
     color: #64748b;
+    line-height: 1.7;
     margin: 0;
-    max-width: 95%;
-    line-height: 1.8;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.8s var(--easeOutQuart) 0.2s;
   }
-  
-  /* Features Grid */
-  .features-grid-container {
-    margin-top: 3rem;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s var(--easeOutQuart) 0.3s;
+
+  /* Video Section Styles */
+  .video-section {
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  .features-grid-container.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+
+  .video-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 
+      0 20px 60px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(139, 92, 246, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
+  .video-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 25px 80px rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(139, 92, 246, 0.1);
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.6), transparent);
+    border-radius: 20px 20px 0 0;
+  }
+
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
   }
-  
-  /* Feature Card Styles */
+
   .feature-card {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  
-  .feature-card-inner {
-    position: relative;
-    padding: 2.25rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(226, 232, 240, 0.8);
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.6);
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(10px);
-    box-shadow: 
-      0 10px 30px rgba(0, 0, 0, 0.04),
-      0 0 0 1px rgba(255, 255, 255, 0.7),
-      0 1px 3px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: all 0.5s var(--easeOutBack);
+    position: relative;
     overflow: hidden;
-    border: 1px solid rgba(14, 165, 233, 0.08);
   }
-  
-  .feature-card-inner::before {
+
+  .feature-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 4px;
-    height: 0;
-    background: var(--primary-color, #0f172a);
-    transition: height 0.6s var(--easeOutQuart);
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
-  
-  .feature-card-inner:hover {
-    transform: translateY(-12px);
+
+  .feature-card:hover {
+    transform: translateY(-4px);
     box-shadow: 
-      0 20px 40px rgba(0, 0, 0, 0.08),
-      0 0 0 1px rgba(255, 255, 255, 0.8),
-      0 1px 5px rgba(0, 0, 0, 0.1);
+      0 10px 40px rgba(0, 0, 0, 0.06),
+      0 0 0 1px rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.2);
   }
-  
-  .feature-card-inner:hover::before {
-    height: 100%;
+
+  .feature-card:hover::before {
+    opacity: 1;
   }
-  
-  /* Feature Card Icon */
-  .feature-icon-container {
-    margin-bottom: 1.5rem;
-  }
-  
-  .feature-icon-wrapper {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
+    border: 1px solid rgba(139, 92, 246, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(var(--icon-color-rgb), 0.12), rgba(var(--icon-color-rgb), 0.05));
-    box-shadow: 
-      0 6px 15px rgba(var(--icon-color-rgb), 0.15),
-      0 0 0 1px rgba(var(--icon-color-rgb), 0.05);
-    transition: all 0.5s var(--easeOutBack);
-    transform: scale(0.95);
-    position: relative;
-    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    color: #8b5cf6;
   }
-  
-  .feature-icon-wrapper::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.7), transparent 70%);
-    opacity: 0;
-    transform: scale(1.5);
-    transition: all 0.5s ease;
-  }
-  
-  .feature-card-inner:hover .feature-icon-wrapper {
+
+  .feature-card:hover .feature-icon {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+    color: white;
     transform: scale(1.05);
-    box-shadow: 
-      0 12px 24px rgba(var(--icon-color-rgb), 0.25),
-      0 0 0 1px rgba(var(--icon-color-rgb), 0.1);
   }
-  
-  .feature-card-inner:hover .feature-icon-wrapper::after {
-    opacity: 0.6;
-    transform: scale(1);
-    animation: rotateGradient 3s infinite linear;
-  }
-  
-  .feature-icon {
-    width: 32px;
-    height: 32px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    transition: transform 0.5s var(--easeOutBack);
-  }
-  
-  .feature-card-inner:hover .feature-icon {
-    transform: scale(1.1);
-    animation: pulseIcon 1.5s infinite alternate ease-in-out;
-  }
-  
-  /* Feature Card Content */
-  .feature-content {
-    flex: 1;
-  }
-  
-  .feature-content h3 {
+
+  .feature-card h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--heading-color, #0f172a);
+    color: #1e293b;
     margin: 0 0 1rem 0;
-    letter-spacing: -0.01em;
-    transition: transform 0.4s ease;
+    line-height: 1.4;
   }
-  
-  .feature-card-inner:hover .feature-content h3 {
-    transform: translateX(8px);
-    color: var(--primary-color, #4338ca);
-  }
-  
-  .feature-content p {
+
+  .feature-card p {
     color: #64748b;
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.95rem;
+    line-height: 1.6;
     margin: 0;
-    transition: transform 0.4s ease 0.1s;
   }
-  
-  .feature-card-inner:hover .feature-content p {
-    transform: translateX(8px);
-  }
-  
-  /* Floating Elements */
-  .floating-element {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(30px);
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 1.5s var(--easeOutQuart);
-  }
-  
-  .element-1 {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: -150px;
-    background: linear-gradient(45deg, rgba(67, 56, 202, 0.15), rgba(99, 102, 241, 0.08));
-    animation: float1 15s infinite alternate ease-in-out;
-  }
-  
-  .element-2 {
-    width: 400px;
-    height: 400px;
-    bottom: -200px;
-    right: 15%;
-    background: linear-gradient(45deg, rgba(14, 165, 233, 0.12), rgba(56, 189, 248, 0.08));
-    animation: float2 20s infinite alternate ease-in-out;
-  }
-  
-  .element-3 {
-    width: 200px;
-    height: 200px;
-    top: 15%;
-    right: 8%;
-    background: linear-gradient(45deg, rgba(249, 115, 22, 0.12), rgba(251, 146, 60, 0.08));
-    animation: float3 12s infinite alternate ease-in-out;
-  }
-  
-  .element-4 {
-    width: 150px;
-    height: 150px;
-    bottom: 20%;
-    left: 10%;
-    background: linear-gradient(45deg, rgba(16, 185, 129, 0.12), rgba(110, 231, 183, 0.08));
-    animation: float4 17s infinite alternate ease-in-out;
-  }
-  
-  /* Feature Cards Grid */
-  .features-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  /* Convert hex colors to RGB for use in CSS variables */
-  .feature-icon-wrapper[style*="--icon-color: #4338ca"] {
-    --icon-color-rgb: 67, 56, 202;
-  }
-  
-  .feature-icon-wrapper[style*="--icon-color: #0ea5e9"] {
-    --icon-color-rgb: 14, 165, 233;
-  }
-  
-  .feature-icon-wrapper[style*="--icon-color: #f97316"] {
-    --icon-color-rgb: 249, 115, 22;
-  }
-  
-  .feature-icon-wrapper[style*="--icon-color: #10b981"] {
-    --icon-color-rgb: 16, 185, 129;
-  }
-  
-  .feature-icon-wrapper[style*="--icon-color: #8b5cf6"] {
-    --icon-color-rgb: 139, 92, 246;
-  }
-  
-  /* Custom Animation Variables */
 
-
-
-  /* Keyframe Animations */
-  @keyframes pulseIcon {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.15);
-    }
-  }
-  
-  @keyframes rotateGradient {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes float1 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(30px, 50px);
-    }
-  }
-  
-  @keyframes float2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(-40px, -60px);
-    }
-  }
-  
-  @keyframes float3 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(-20px, 30px);
-    }
-  }
-  
-  @keyframes float4 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(40px, -40px);
-    }
-  }
-  
-  /* Scroll reveal animation */
-  .reveal-element.is-visible .animate-title {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .reveal-element.is-visible .animate-title::after {
-    transform: scaleX(1);
-  }
-  
-  .reveal-element.is-visible .animate-text {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .reveal-element.is-visible .glow-effect {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  
-  .reveal-card.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.8s var(--easeOutQuart), transform 0.8s var(--easeOutBack);
-  }
-  
-  /* When section is visible, show floating elements */
-  .features.is-in-viewport .floating-element {
-    opacity: 0.7;
-  }
-  
   /* Responsive Design */
-  @media (max-width: 1200px) {
-    .features-grid-container {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-  }
-  
   @media (max-width: 1024px) {
-    .features-split-layout {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-    }
-    
-    .lottie-container {
-    
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .features-content-column {
-      order: 2;
-    }
-    
-    .section-header {
-      text-align: center;
-      max-width: 100%;
-    }
-    
-    .section-header p {
-      margin: 0 auto;
-    }
-    
-    .animate-title::after {
-      left: 50%;
-      transform: translateX(-50%) scaleX(0);
-    }
-    
-    .reveal-element.is-visible .animate-title::after {
-      transform: translateX(-50%) scaleX(1);
-    }
-    
-    .features-grid-container {
+    .features-grid {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
   }
-  
+
   @media (max-width: 768px) {
-    .features {
-      padding: 6rem 1.5rem;
-    }
-    
-    .animate-title {
-      font-size: 2.5rem;
-    }
-    
-    .lottie-player {
-      min-height: 350px;
-    }
-    
-    .floating-element {
-      opacity: 0.3;
-    }
-    
-    .features-grid-container {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  @media (max-width: 480px) {
     .features {
       padding: 4rem 1rem;
     }
-    
-    .feature-card-inner {
-      padding: 1.75rem;
+
+    .section-title {
+      font-size: 2.25rem;
     }
-    
-    .animate-title {
-      font-size: 2rem;
+
+    .section-description {
+      font-size: 1rem;
     }
-    
-    .feature-icon-wrapper {
-      width: 56px;
-      height: 56px;
+
+    .video-section {
+      margin: 3rem 0;
     }
-    
-    .feature-icon {
-      width: 28px;
-      height: 28px;
+
+    .video-container {
+      padding: 1rem;
+      border-radius: 16px;
     }
-    
-    .feature-content h3 {
-      font-size: 1.15rem;
+
+    .video-wrapper {
+      border-radius: 10px;
     }
-    
-    .element-3, .element-4 {
-      display: none;
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-  }
-  
-  /* Fallback for no JS */
-  .no-js .feature-card {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-  
-  .no-js .animate-title,
-  .no-js .animate-text {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-  
-  .no-js .animate-title::after {
-    transform: scaleX(1) !important;
-  }
-  
-  .no-js .floating-element {
-    opacity: 0.5 !important;
+
+    .feature-card {
+      padding: 1.5rem;
+    }
   }
 
-  .bg-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
+  @media (max-width: 480px) {
+    .features {
+      padding: 3rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .video-section {
+      margin: 2rem 0;
+    }
+
+    .video-container {
+      padding: 0.75rem;
+      border-radius: 12px;
+    }
+
+    .video-wrapper {
+      border-radius: 8px;
+    }
+
+    .feature-card {
+      padding: 1.25rem;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.125rem;
+    }
   }
-  
-  .shape {
-    position: absolute;
-    opacity: 0.08;
-    pointer-events: none;
-  }
-  
-  .shape-1 {
-    top: 10%;
-    left: 5%;
-    width: 150px;
-    height: 150px;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    background: linear-gradient(45deg, #4338ca, #3b82f6);
-    animation: morph 15s linear infinite alternate;
-  }
-  
-  .shape-2 {
-    bottom: 15%;
-    right: 8%;
-    width: 180px;
-    height: 180px;
-    border-radius: 58% 42% 38% 62% / 42% 55% 45% 58%;
-    background: linear-gradient(45deg, #f97316, #fb923c);
-    animation: morph 18s linear infinite alternate;
-    animation-delay: -10s;
-  }
-  
-  .shape-3 {
-    top: 45%;
-    right: 15%;
-    width: 120px;
-    height: 120px;
-    border-radius: 33% 67% 60% 40% / 50% 45% 55% 50%;
-    background: linear-gradient(45deg, #10b981, #34d399);
-    animation: morph 20s linear infinite alternate;
-    animation-delay: -5s;
-  }
-  
-  .shape-4 {
-    bottom: 25%;
-    left: 12%;
-    width: 140px;
-    height: 140px;
-    border-radius: 47% 53% 33% 67% / 64% 58% 42% 36%;
-    background: linear-gradient(45deg, #8b5cf6, #a78bfa);
-    animation: morph 17s linear infinite alternate;
-    animation-delay: -15s;
-  }
-  
-  .shape-dots {
-    top: 20%;
-    right: 10%;
-    width: 180px;
-    height: 180px;
-    background-image: radial-gradient(#3b82f6 2px, transparent 2px);
-    background-size: 18px 18px;
-    opacity: 0.15;
-    animation: rotateSlow 120s linear infinite;
-  }
-  
-  .shape-circle {
-    bottom: 10%;
-    left: 20%;
-    width: 200px;
-    height: 200px;
-    border: 4px dashed #8b5cf6;
-    border-radius: 50%;
-    opacity: 0.15;
-    animation: rotateSlow 80s linear infinite reverse;
-  }
-  
-  .shape-waves {
-    top: 30%;
-    left: 5%;
-    width: 300px;
-    height: 100px;
-    background: repeating-linear-gradient(45deg, #4338ca, #4338ca 5px, transparent 5px, transparent 25px);
-    opacity: 0.07;
-    transform: rotate(-35deg);
+
+  /* Animation for scroll reveal */
+  @media (prefers-reduced-motion: no-preference) {
+    .feature-card {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .feature-card:nth-child(1) { animation-delay: 0.1s; }
+    .feature-card:nth-child(2) { animation-delay: 0.2s; }
+    .feature-card:nth-child(3) { animation-delay: 0.3s; }
+    .feature-card:nth-child(4) { animation-delay: 0.4s; }
+    .feature-card:nth-child(5) { animation-delay: 0.5s; }
+    .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 </style>
 
-<script src="/src/components/js/featured.js"></script>
+<script>
+  // Simple scroll animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe feature cards and video container when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.feature-card');
+    const videoContainer = document.querySelector('.video-container');
+    
+    cards.forEach(card => observer.observe(card));
+    
+    if (videoContainer) {
+      observer.observe(videoContainer);
+    }
+  });
+</script>
