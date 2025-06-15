@@ -14,6 +14,7 @@ import AboutSection from "../components/AboutSection.astro";
 import NextIsoSection from "../components/NextIsoSection.astro";
 import { ClientRouter } from 'astro:transitions';
 import Timeline from "../components/Timeline.astro";
+import CTASection from "../components/CTASection.astro";
 
 
 ---
@@ -22,8 +23,8 @@ import Timeline from "../components/Timeline.astro";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    
-  
+
+
   </head>
 
   <body>
@@ -32,17 +33,19 @@ import Timeline from "../components/Timeline.astro";
     <HeroSection />
     <FeaturedSection />
     <AboutSection />
-    <!-- 
+     <NextIsoSection />
+     <CTASection />
+    <!--
     <Timeline/>
     <ContactFormSection />  -->
     <!--
-    <NextIsoSection />
+
     <ExperiencesSection />
 
     <ClientSection />
- 
+
     <ContactFormSection /> -->
     <Footer />
-  
+
   </body>
 </html>

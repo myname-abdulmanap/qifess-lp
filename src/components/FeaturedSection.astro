@@ -1,15 +1,18 @@
 ---
-// FeaturesSection.astro - Elegant modern design for Qifess Field Service
+// FeaturesSection.astro - Responsive 3 Column Design for Qifess Field Service
 ---
 
 <section class="features" id="features">
   <div class="features-container">
     <!-- Section Header -->
     <div class="section-header">
-      <h2 class="section-title">Features</h2>
+      <div class="section-badge">
+        <span>✦ FEATURES ✦</span>
+      </div>
+      <h2 class="section-title">Powerful Field Service Management</h2>
       <p class="section-description">
-        Fits everything on all your devices. Access all your field service management 
-        features seamlessly on any device—desktop, tablet, or smartphone—anytime, anywhere.
+        Complete field service solution that adapts to your workflow. Access all your management
+        tools seamlessly across desktop, tablet, and mobile devices.
       </p>
     </div>
 
@@ -17,175 +20,377 @@
     <div class="video-section">
       <div class="video-container">
         <div class="video-wrapper">
-          <iframe 
-            src="https://www.youtube.com/embed/Yvhv0lMx4dk" 
-            title="Qifess Field Service Demo" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
+          <iframe
+            src="https://www.youtube.com/embed/Yvhv0lMx4dk"
+            title="Qifess Field Service Demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          >
           </iframe>
         </div>
-        <div class="video-overlay"></div>
       </div>
     </div>
 
-    <!-- Features Grid -->
+    <!-- Features Grid - 3 Columns -->
     <div class="features-grid">
       <!-- Feature 1 -->
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 3H21V17H3V3Z" stroke="currentColor" stroke-width="2"/>
-            <path d="M7 21H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M12 17V21" stroke="currentColor" stroke-width="2"/>
-            <rect x="5" y="5" width="14" height="10" rx="1" stroke="currentColor" stroke-width="2"/>
-            <path d="M9 9H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M9 11H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M3 3H21V17H3V3Z" stroke="currentColor" stroke-width="2"></path>
+            <path d="M7 21H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M12 17V21" stroke="currentColor" stroke-width="2"></path>
+            <rect x="5" y="5" width="14" height="10" rx="1" stroke="currentColor" stroke-width="2"
+            ></rect>
+            <path d="M9 9H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M9 11H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
           </svg>
         </div>
-        <h3>Ticketing System</h3>
-        <p>Manage customer requests with ease by creating, assigning, and tracking service tickets in real-time.</p>
+        <div class="feature-content">
+          <h3>Ticketing System</h3>
+          <p>
+            Manage customer requests with ease by creating, assigning, and tracking service tickets
+            in real-time.
+          </p>
+          <div class="feature-highlight">
+            <span>Real-time</span>
+          </div>
+        </div>
       </div>
 
       <!-- Feature 2 -->
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 6H20L18 20H6L4 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M4 6L2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="9" cy="12" r="1" fill="currentColor"/>
-            <circle cx="12" cy="12" r="1" fill="currentColor"/>
-            <circle cx="15" cy="12" r="1" fill="currentColor"/>
-            <path d="M7 16H17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 6H20L18 20H6L4 6Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linejoin="round"></path>
+            <path d="M4 6L2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <circle cx="9" cy="12" r="1" fill="currentColor"></circle>
+            <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+            <circle cx="15" cy="12" r="1" fill="currentColor"></circle>
+            <path d="M7 16H17" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path>
           </svg>
         </div>
-        <h3>Master Database</h3>
-        <p>Store and access all essential information in one centralized, secure database, ensuring accuracy and efficiency.</p>
+        <div class="feature-content">
+          <h3>Master Database</h3>
+          <p>
+            Store and access all essential information in one centralized, secure database, ensuring
+            accuracy and efficiency.
+          </p>
+          <div class="feature-highlight">
+            <span>Secure</span>
+          </div>
+        </div>
       </div>
 
       <!-- Feature 3 -->
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="4" width="18" height="15" rx="2" stroke="currentColor" stroke-width="2"/>
-            <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
-            <path d="M8 6V2" stroke="currentColor" stroke-width="2"/>
-            <path d="M16 6V2" stroke="currentColor" stroke-width="2"/>
-            <path d="M7 14H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M15 14H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="12" cy="16" r="1" fill="currentColor"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="3" y="4" width="18" height="15" rx="2" stroke="currentColor" stroke-width="2"
+            ></rect>
+            <path d="M3 10H21" stroke="currentColor" stroke-width="2"></path>
+            <path d="M8 6V2" stroke="currentColor" stroke-width="2"></path>
+            <path d="M16 6V2" stroke="currentColor" stroke-width="2"></path>
+            <path d="M7 14H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M15 14H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            ></path>
+            <circle cx="12" cy="16" r="1" fill="currentColor"></circle>
           </svg>
         </div>
-        <h3>Technician Work Schedule</h3>
-        <p>Efficiently plan and manage technician schedules to optimize field service operations and minimize downtime.</p>
+        <div class="feature-content">
+          <h3>Technician Work Schedule</h3>
+          <p>
+            Efficiently plan and manage technician schedules to optimize field service operations
+            and minimize downtime.
+          </p>
+          <div class="feature-highlight">
+            <span>AI-Optimized</span>
+          </div>
+        </div>
       </div>
 
       <!-- Feature 4 -->
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M8 4L8 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M16 4L16 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M4 8L2 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M4 16L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            ></path>
+            <path d="M8 4L8 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M16 4L16 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            ></path>
+            <path d="M4 8L2 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M4 16L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            ></path>
           </svg>
         </div>
-        <h3>SLA Monitoring</h3>
-        <p>Track and monitor Service Level Agreements to ensure timely response and resolution, improving customer satisfaction.</p>
+        <div class="feature-content">
+          <h3>SLA Monitoring</h3>
+          <p>
+            Track and monitor Service Level Agreements to ensure timely response and resolution,
+            improving customer satisfaction.
+          </p>
+          <div class="feature-highlight">
+            <span>Performance</span>
+          </div>
+        </div>
       </div>
 
       <!-- Feature 5 -->
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7Z" stroke="currentColor" stroke-width="2"/>
-            <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            <circle cx="8" cy="11" r="1" fill="currentColor"/>
-            <circle cx="12" cy="11" r="1" fill="currentColor"/>
-            <circle cx="16" cy="11" r="1" fill="currentColor"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7Z"
+              stroke="currentColor"
+              stroke-width="2"></path>
+            <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"
+            ></path>
+            <circle cx="8" cy="11" r="1" fill="currentColor"></circle>
+            <circle cx="12" cy="11" r="1" fill="currentColor"></circle>
+            <circle cx="16" cy="11" r="1" fill="currentColor"></circle>
           </svg>
         </div>
-        <h3>Sparepart Management</h3>
-        <p>Keep track of spare parts inventory, manage stock levels, and ensure availability for field service operations.</p>
+        <div class="feature-content">
+          <h3>Sparepart Management</h3>
+          <p>
+            Keep track of spare parts inventory, manage stock levels, and ensure availability for
+            field service operations.
+          </p>
+          <div class="feature-highlight">
+            <span>Automated</span>
+          </div>
+        </div>
       </div>
 
       <!-- Feature 6 -->
       <div class="feature-card">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2"/>
-            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-            <path d="M8 21L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M12 21V19" stroke="currentColor" stroke-width="2"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z"
+              stroke="currentColor"
+              stroke-width="2"></path>
+            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M8 21L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            ></path>
+            <path d="M12 21V19" stroke="currentColor" stroke-width="2"></path>
           </svg>
         </div>
-        <h3>Business Trip Module</h3>
-        <p>Simplify the planning and tracking of business trips for technicians, including travel expenses and schedules.</p>
+        <div class="feature-content">
+          <h3>Business Trip Module</h3>
+          <p>
+            Simplify the planning and tracking of business trips for technicians, including travel
+            expenses and schedules.
+          </p>
+          <div class="feature-highlight">
+            <span>Expense Track</span>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="bg-elements">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-grid"></div>
   </div>
 </section>
 
 <style>
   .features {
-    padding: 5rem 1rem;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, var(--bg-main));
     position: relative;
     overflow: hidden;
-  }
-
-  .features::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.08) 0%, transparent 50%);
-    pointer-events: none;
   }
 
   .features-container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 
+  /* Background Elements */
+  .bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.02;
+  }
+
+  .bg-circle-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    top: -150px;
+    right: -150px;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .bg-circle-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    bottom: -100px;
+    left: -100px;
+    animation: float 25s ease-in-out infinite reverse;
+  }
+
+  .bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(rgba(37, 99, 235, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridMove 30s linear infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(180deg);
+    }
+  }
+
+  @keyframes gridMove {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(40px, 40px);
+    }
+  }
+
+  /* Section Header */
   .section-header {
     text-align: center;
-    margin-bottom: 4rem;
-    max-width: 600px;
+    margin-bottom: 3rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }
 
+  .section-badge {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
   .section-title {
-    font-size: 2.75rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: #1e293b;
+    color: var(--heading-color);
     margin: 0 0 1.5rem 0;
-    letter-spacing: -0.025em;
-    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--heading-color) 0%, var(--primary-color) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .section-description {
-    font-size: 1.125rem;
-    color: #64748b;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.6;
     margin: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* Video Section Styles */
+  /* Video Section - Smaller */
   .video-section {
-    margin: 4rem 0;
+    margin: 3rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,34 +398,30 @@
 
   .video-container {
     position: relative;
-    max-width: 800px;
+    max-width: 700px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--color-card);
     border-radius: 20px;
     padding: 1.5rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    box-shadow: 
-      0 20px 60px rgba(0, 0, 0, 0.08),
-      0 0 0 1px rgba(139, 92, 246, 0.05);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    overflow: hidden;
   }
 
   .video-container:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-      0 25px 80px rgba(0, 0, 0, 0.12),
-      0 0 0 1px rgba(139, 92, 246, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
 
   .video-wrapper {
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     border-radius: 12px;
     overflow: hidden;
-    background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   }
 
   .video-wrapper iframe {
@@ -232,32 +433,24 @@
     border-radius: 12px;
   }
 
-  .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.6), transparent);
-    border-radius: 20px 20px 0 0;
-  }
-
+  /* Features Grid - 3 Columns Responsive */
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     margin-top: 3rem;
   }
 
   .feature-card {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(226, 232, 240, 0.8);
+    background: var(--color-card);
+    border: 1px solid rgba(37, 99, 235, 0.08);
     border-radius: 16px;
-    padding: 2rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
+    padding: 1.8rem;
+    transition: var(--transition);
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    height: fit-content;
   }
 
   .feature-card::before {
@@ -266,74 +459,94 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
 
   .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 
-      0 10px 40px rgba(0, 0, 0, 0.06),
-      0 0 0 1px rgba(139, 92, 246, 0.1);
-    border-color: rgba(139, 92, 246, 0.2);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(37, 99, 235, 0.2);
   }
 
   .feature-card:hover::before {
-    opacity: 1;
+    transform: scaleX(1);
   }
 
   .feature-icon {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 12px;
-    background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
-    border: 1px solid rgba(139, 92, 246, 0.1);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-    color: #8b5cf6;
+    transition: var(--transition);
+    color: white;
+    box-shadow: var(--shadow-md);
   }
 
   .feature-card:hover .feature-icon {
-    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
-    color: white;
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(3deg);
   }
 
-  .feature-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin: 0 0 1rem 0;
-    line-height: 1.4;
+  .feature-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0 0 0.8rem 0;
+    line-height: 1.3;
   }
 
-  .feature-card p {
-    color: #64748b;
-    font-size: 0.95rem;
+  .feature-content p {
+    color: var(--text-light);
+    font-size: 0.9rem;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 0 1.2rem 0;
+  }
+
+  .feature-highlight {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: var(--transition);
+  }
+
+  .feature-card:hover .feature-highlight {
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(3px);
   }
 
   /* Responsive Design */
   @media (max-width: 1024px) {
     .features-grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
   }
 
   @media (max-width: 768px) {
     .features {
-      padding: 4rem 1rem;
+      padding: 3rem 1rem;
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
     }
 
     .section-title {
-      font-size: 2.25rem;
+      font-size: 2.2rem;
     }
 
     .section-description {
@@ -341,7 +554,46 @@
     }
 
     .video-section {
-      margin: 3rem 0;
+      margin: 2.5rem 0;
+    }
+
+    .video-container {
+      padding: 1.2rem;
+      max-width: 600px;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .feature-card {
+      padding: 1.5rem;
+    }
+
+    .bg-circle-1,
+    .bg-circle-2 {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .features {
+      padding: 2.5rem 0.8rem;
+    }
+
+    .section-badge {
+      padding: 0.4rem 1rem;
+      font-size: 0.7rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .section-description {
+      font-size: 0.95rem;
     }
 
     .video-container {
@@ -353,53 +605,25 @@
       border-radius: 10px;
     }
 
-    .features-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
     .feature-card {
-      padding: 1.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .features {
-      padding: 3rem 1rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-    }
-
-    .video-section {
-      margin: 2rem 0;
-    }
-
-    .video-container {
-      padding: 0.75rem;
-      border-radius: 12px;
-    }
-
-    .video-wrapper {
-      border-radius: 8px;
-    }
-
-    .feature-card {
-      padding: 1.25rem;
+      padding: 1.3rem;
     }
 
     .feature-icon {
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
     }
 
-    .feature-card h3 {
-      font-size: 1.125rem;
+    .feature-content h3 {
+      font-size: 1.1rem;
+    }
+
+    .feature-content p {
+      font-size: 0.85rem;
     }
   }
 
-  /* Animation for scroll reveal */
+  /* Animation Enhancements */
   @media (prefers-reduced-motion: no-preference) {
     .feature-card {
       opacity: 0;
@@ -407,12 +631,24 @@
       animation: fadeInUp 0.6s ease forwards;
     }
 
-    .feature-card:nth-child(1) { animation-delay: 0.1s; }
-    .feature-card:nth-child(2) { animation-delay: 0.2s; }
-    .feature-card:nth-child(3) { animation-delay: 0.3s; }
-    .feature-card:nth-child(4) { animation-delay: 0.4s; }
-    .feature-card:nth-child(5) { animation-delay: 0.5s; }
-    .feature-card:nth-child(6) { animation-delay: 0.6s; }
+    .feature-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .feature-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .feature-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    .feature-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    .feature-card:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+    .feature-card:nth-child(6) {
+      animation-delay: 0.6s;
+    }
 
     @keyframes fadeInUp {
       to {
@@ -420,34 +656,110 @@
         transform: translateY(0);
       }
     }
+
+    .video-container {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: scaleIn 0.6s ease 0.2s forwards;
+    }
+
+    @keyframes scaleIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
   }
 </style>
 
 <script>
-  // Simple scroll animation
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Observe feature cards and video container when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.feature-card');
-    const videoContainer = document.querySelector('.video-container');
-    
-    cards.forEach(card => observer.observe(card));
-    
-    if (videoContainer) {
-      observer.observe(videoContainer);
+  // Enhanced responsive interactions
+  class ResponsiveFeaturesAnimation {
+    constructor() {
+      this.init();
     }
-  });
+
+    init() {
+      this.setupScrollObserver();
+      this.setupCardInteractions();
+      this.setupResponsiveGrid();
+    }
+
+    setupScrollObserver() {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+
+            if (entry.target.classList.contains('feature-card')) {
+                entry.target.classList.add('animate-in');
+              }
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '0px 0px -30px 0px',
+        }
+      );
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll(
+          '.feature-card, .video-container, .section-header'
+        );
+        elements.forEach((el) => observer.observe(el));
+      });
+    }
+
+    setupCardInteractions() {
+      document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.feature-card');
+
+        cards.forEach((card) => {
+          card.addEventListener('mouseenter', () => {
+            card.style.zIndex = '10';
+          });
+
+          card.addEventListener('mouseleave', () => {
+            card.style.zIndex = '1';
+          });
+
+          // Touch support for mobile
+          card.addEventListener('touchstart', (e) => {
+            card.style.transform = 'translateY(-3px)';
+          });
+
+          card.addEventListener('touchend', (e) => {
+            setTimeout(() => {
+              card.style.transform = '';
+            }, 150);
+          });
+        });
+      });
+    }
+
+    setupResponsiveGrid() {
+      const handleResize = () => {
+        const grid = document.querySelector('.features-grid');
+        const cards = document.querySelectorAll('.feature-card');
+
+        if (window.innerWidth <= 768) {
+          grid.style.gap = '1.5rem';
+        } else if (window.innerWidth <= 1024) {
+          grid.style.gap = '1.5rem';
+        } else {
+          grid.style.gap = '1.5rem';
+        }
+      };
+
+      window.addEventListener('resize', handleResize);
+      handleResize();
+    }
+  }
+
+  // Initialize
+  new ResponsiveFeaturesAnimation();
 </script>
+
