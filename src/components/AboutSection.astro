@@ -410,12 +410,15 @@
     backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Permanent border - always visible */
+    border: 1px solid rgba(59, 130, 246, 0.3);
     position: relative;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     opacity: 0;
     transform: translateY(30px);
+    /* Add subtle glow effect */
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
   }
 
   .feature-card.animate {
@@ -425,8 +428,9 @@
 
   .feature-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+    /* Intensify border on hover */
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
   }
 
   .feature-header {
@@ -633,3 +637,165 @@
     }
   }
 </style>
+
+<script>
+  // Enhanced animations and interactions - Astro View Transitions Compatible
+  function initWhyQifessSection() {
+    // Counter animation function
+    function animateCounter(element, target, duration = 2000) {
+      const start = 0;
+      const startTime = performance.now();
+
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Easing function for smooth animation
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = start + (target - start) * easeOut;
+
+        if (target % 1 !== 0) {
+          // For decimal numbers like 99.9
+          element.textContent = current.toFixed(1);
+        } else {
+          // For whole numbers
+          element.textContent = Math.floor(current);
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target % 1 !== 0 ? target.toFixed(1) : target;
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    }
+
+    // Enhanced Intersection Observer for animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    // Enhanced Intersection Observer for stats
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+
+            // Animate counters when stats section comes into view
+            if (entry.target.classList.contains('stats-row')) {
+              const statNumbers = entry.target.querySelectorAll('.stat-number');
+              statNumbers.forEach((stat, index) => {
+                const target = parseFloat(stat.getAttribute('data-target'));
+                setTimeout(() => {
+                  animateCounter(stat, target);
+                }, index * 200); // Stagger the animations
+              });
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '0px 0px -20px 0px',
+      }
+    );
+
+    // Observe all animate elements
+    document.querySelectorAll('.animate-element').forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Observe stats section
+    const statsRow = document.querySelector('.stats-row');
+    if (statsRow) {
+      statsObserver.observe(statsRow);
+    }
+
+    // Enhanced tilt effect for cards
+    document.querySelectorAll('[data-tilt]').forEach((card) => {
+      // Mouse move tilt effect
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      // Mouse leave reset
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    });
+
+    // View More button interaction
+    const viewMoreBtn = document.querySelector('.view-more-btn');
+    if (viewMoreBtn) {
+      viewMoreBtn.addEventListener('click', function () {
+        // Add your view more functionality here
+        console.log('View More clicked');
+
+        // Example: Smooth scroll to next section or show more content
+        // You can customize this based on your needs
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 150);
+      });
+    }
+  }
+
+  // Initialize on DOM load and after view transitions
+  function initializeOnLoad() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initWhyQifessSection);
+    } else {
+      initWhyQifessSection();
+    }
+  }
+
+  // Handle Astro View Transitions
+  document.addEventListener('astro:page-load', initWhyQifessSection);
+
+  // Fallback for non-Astro environments
+  initializeOnLoad();
+
+  // Cleanup function for view transitions
+  document.addEventListener('astro:before-preparation', () => {
+    // Clean up any running animations or observers if needed
+    const runningAnimations = document.querySelectorAll('.animate-element');
+    runningAnimations.forEach((el) => {
+      el.style.transition = 'none';
+    });
+  });
+
+  // Re-enable transitions after navigation
+  document.addEventListener('astro:after-swap', () => {
+    // Re-enable transitions
+    setTimeout(() => {
+      const elements = document.querySelectorAll('.animate-element');
+      elements.forEach((el) => {
+        el.style.transition = '';
+      });
+    }, 100);
+  });
+</script>

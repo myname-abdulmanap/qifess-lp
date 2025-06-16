@@ -1,5 +1,5 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro";
+import ThemeToggle from './ThemeToggle.astro';
 ---
 
 <style>
@@ -13,7 +13,6 @@ import ThemeToggle from "./ThemeToggle.astro";
   header.transparent {
     background: transparent;
     box-shadow: none;
-
   }
 
   header.white {
@@ -51,7 +50,6 @@ import ThemeToggle from "./ThemeToggle.astro";
 
   .logo-white {
     opacity: 0;
-    
   }
 
   header.transparent .logo-white {
@@ -62,9 +60,15 @@ import ThemeToggle from "./ThemeToggle.astro";
     opacity: 0;
   }
 
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+
   .menu ul {
     display: flex;
     gap: 2.5rem;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -74,17 +78,110 @@ import ThemeToggle from "./ThemeToggle.astro";
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
     font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+
+  /* Menu hover effects - subtle with underline */
+  .menu a:not(.try-button):hover {
+    color: var(--primary-color);
+    transform: translateY(-1px);
+  }
+
+  .menu a:not(.try-button)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+
+  .menu a:not(.try-button):hover::after {
+    width: 100%;
   }
 
   header.white .menu a {
     color: var(--text-bar);
   }
 
+  header.white .menu a:not(.try-button):hover {
+    color: var(--primary-color);
+  }
+
+  /* Try QIFESS Button - Updated with CSS Variables */
+  .try-button {
+    background: var(--bg-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Mobile Try Button - hidden on desktop */
+  .mobile-try-button {
+    display: none;
+  }
+
+  .try-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+    transition: left 0.5s;
+  }
+
+  .try-button:hover::before {
+    left: 100%;
+  }
+
+  .try-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+  }
+
+  .try-button:active {
+    transform: translateY(0);
+  }
+
+  /* Transparent header button styling */
+  header.transparent .try-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  header.transparent .try-button:hover {
+    background: var(--bg-color);
+    color: var(--primary-color);
+    border-color: var(--bg-color);
+  }
+
   .navbar-icons {
     display: flex;
     align-items: center;
+    gap: 1rem;
   }
 
   .navbar-icons .icon {
@@ -106,6 +203,10 @@ import ThemeToggle from "./ThemeToggle.astro";
 
   header.white .bar {
     background-color: var(--text-bar);
+  }
+
+  header.transparent .bar {
+    background-color: white;
   }
 
   .hamburger {
@@ -148,12 +249,13 @@ import ThemeToggle from "./ThemeToggle.astro";
     min-width: 200px;
     padding: 0;
     z-index: 999;
-    
-    /* Animation properties */
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s;
     overflow: hidden;
     max-height: 0;
     transition: all 0.3s ease;
@@ -163,7 +265,7 @@ import ThemeToggle from "./ThemeToggle.astro";
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    max-height: 200px; /* Adjust based on your content */
+    max-height: 200px;
     padding: 0.5rem 0;
   }
 
@@ -186,7 +288,6 @@ import ThemeToggle from "./ThemeToggle.astro";
     background-color: rgba(0, 0, 0, 0.05);
   }
 
-  /* Style for dropdown toggle indicator */
   .dropdown-toggle {
     display: flex;
     align-items: center;
@@ -204,6 +305,7 @@ import ThemeToggle from "./ThemeToggle.astro";
     transform: rotate(180deg);
   }
 
+  /* Mobile Styles */
   @media (max-width: 768px) {
     .hamburger {
       display: block;
@@ -219,6 +321,7 @@ import ThemeToggle from "./ThemeToggle.astro";
       padding: 2rem;
       transition: left 0.3s ease;
       z-index: 1000;
+      overflow-y: auto;
     }
 
     header.transparent .menu a {
@@ -231,7 +334,36 @@ import ThemeToggle from "./ThemeToggle.astro";
 
     .menu ul {
       flex-direction: column;
+      gap: 1.5rem;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .menu ul li {
+      width: 100%;
+    }
+
+    /* Mobile menu structure */
+    .menu {
+      flex-direction: column;
+      align-items: flex-start;
       gap: 1rem;
+    }
+
+    /* Mobile menu item hover effects */
+    .menu a:not(.try-button) {
+      padding: 0.75rem 0;
+      width: 100%;
+      display: block;
+    }
+
+    .menu a:not(.try-button):hover {
+      color: var(--primary-color);
+      transform: translateX(3px);
+    }
+
+    .menu a:not(.try-button)::after {
+      bottom: 0.5rem;
     }
 
     .hamburger.active .bar:nth-child(1) {
@@ -245,7 +377,9 @@ import ThemeToggle from "./ThemeToggle.astro";
     .hamburger.active .bar:nth-child(3) {
       transform: rotate(45deg) translate(-5px, -6px);
     }
-    
+
+    /* Mobile Try Button - Add actual clickable element */
+
     /* Mobile dropdown styles */
     .has-dropdown .dropdown {
       position: static;
@@ -256,13 +390,49 @@ import ThemeToggle from "./ThemeToggle.astro";
       max-height: 0;
       overflow: hidden;
     }
-    
+
     .has-dropdown.open .dropdown {
       max-height: 500px;
     }
-    
+
     .dropdown a {
       padding: 0.5rem 0;
+    }
+
+    .dropdown a:hover {
+      color: var(--primary-color);
+      transform: translateX(3px);
+    }
+
+    .navbar-icons {
+      gap: 0.5rem;
+    }
+
+    .nav-container {
+      padding: 1rem;
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 480px) {
+    .nav-container {
+      padding: 0.75rem;
+    }
+
+    .try-button {
+      /* padding: 0.7rem 1.25rem;
+      font-size: 0.9rem; */
+      display: none;
+    }
+
+    .logo a {
+      width: 150px;
+      height: 40px;
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 15px;
     }
   }
 </style>
@@ -272,27 +442,35 @@ import ThemeToggle from "./ThemeToggle.astro";
   <div class="nav-container">
     <div class="logo">
       <a href="/">
-        <img class="logo-img logo-dark" src="/assets/img/qifess-logo.png" alt="Logo" width="50" height="50" />
-        <img class="logo-img logo-white" src="/assets/img/qifess-logo.png" alt="Logo" width="50" height="50" />
+        <img
+          class="logo-img logo-dark"
+          src="/assets/img/qifess-logo.png"
+          alt="Logo"
+          width="50"
+          height="50"
+        />
+        <img
+          class="logo-img logo-white"
+          src="/assets/img/qifess-logo.png"
+          alt="Logo"
+          width="50"
+          height="50"
+        />
       </a>
     </div>
     <nav class="menu">
       <ul>
         <li><a href="/#">Home</a></li>
         <li><a href="/">About Us</a></li>
-        <li class="has-dropdown">
-          <a href="#" class="dropdown-toggle">Products</a>
-          <ul class="dropdown">
-            <li><a href="https://protectqube.com">ProtectCube</a></li>
-            <li><a href="https://qifess.com">Qifess</a></li>
-          </ul>
-        </li>
-        <li><a href="/#contact">Contact Us</a></li>
-        <li><a href="#">News</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/contact">Contact Us</a></li>
       </ul>
+      <!-- Mobile Try Button - only visible on mobile -->
+      <a href="/#demo" class="mobile-try-button">Try for Free</a>
     </nav>
-    
+
     <div class="navbar-icons">
+      <a href="/#demo" class="try-button">Try for Free</a>
       <ThemeToggle />
       <button class="hamburger" aria-label="Menu">
         <span class="bar"></span>
@@ -302,6 +480,5 @@ import ThemeToggle from "./ThemeToggle.astro";
     </div>
   </div>
 </header>
-
 
 <script src="/src/components/js/header.ts"></script>
