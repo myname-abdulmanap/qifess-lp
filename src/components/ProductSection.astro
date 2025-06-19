@@ -1,0 +1,445 @@
+---
+// ProductSection.astro
+---
+
+<section class="products-section">
+  <div class="container">
+    <div class="products-header">
+      <h2 class="section-title">
+        Our Products
+        <span class="title-accent"></span>
+      </h2>
+      <p class="section-subtitle">
+       Products developed by Qualita Indonesia -  Innovative solutions for field service management and IoT security
+      </p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card qifess-card">
+        <div class="card-header">
+          <div class="product-logo">
+            <img src="/assets/img/qifess-logo.png" alt="Qifess Logo" />
+          </div>
+          <div class="product-title">
+            <h3>Qifess</h3>
+            <span class="product-category">Field Service Management</span>
+          </div>
+        </div>
+
+        <p class="product-description">
+          Comprehensive solution that streamlines operations, optimizes resource allocation, and
+          enhances customer satisfaction through intelligent automation.
+        </p>
+
+        <div class="product-features">
+          <span class="feature-pill">Real-time Tracking</span>
+          <span class="feature-pill">Work Orders</span>
+          <span class="feature-pill">Dashboard Analytics</span>
+          <span class="feature-pill">Cloud Platform</span>
+        </div>
+
+        <div class="product-actions">
+          <a href="https://qifess.com" class="btn-primary">
+            <span>Learn More</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 17L17 7M17 7H7M17 7V17"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <a href="https://qifess.com/" class="btn-secondary">Try Demo</a>
+        </div>
+      </div>
+
+      <div class="product-card protectqube-card">
+        <div class="card-header">
+          <div class="product-logo">
+            <img src="https://qualita-indonesia.com/assets/img/protectqube-logo.png" alt="ProtectQube Logo" />
+          </div>
+          <div class="product-title">
+            <h3>ProtectQube</h3>
+            <span class="product-category">IoT Security</span>
+          </div>
+        </div>
+
+        <p class="product-description">
+          Advanced IoT security solution for ATM environments with comprehensive monitoring, threat
+          detection, and automated response capabilities.
+        </p>
+
+        <div class="product-features">
+          <span class="feature-pill">24/7 Monitoring</span>
+          <span class="feature-pill">AI Detection</span>
+          <span class="feature-pill">IoT Security</span>
+          <span class="feature-pill">Real-time Alerts</span>
+        </div>
+
+        <div class="product-actions">
+          <a href="https://protectqube.com" class="btn-primary">
+            <span>Learn More</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 17L17 7M17 7H7M17 7V17"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <a href="https://protectqube.com/" class="btn-secondary">Consultation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .products-section {
+    padding: 5rem 0;
+    background: var(--bg-color, #f8fafc);
+    position: relative;
+    /* Fade in sederhana untuk section */
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .products-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--heading-color, #1f2937);
+    margin-bottom: 0.75rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .title-accent {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #4338ca, #ec4899);
+    border-radius: 2px;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary, #6b7280);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: var(--color-card, white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    /* Fade in dengan delay ringan */
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .product-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #4338ca, #ec4899);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .product-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+  }
+
+  .product-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-title h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--heading-color, #1f2937);
+    margin: 0 0 0.25rem 0;
+  }
+
+  .product-category {
+    font-size: 0.875rem;
+    color: var(--text-secondary, #6b7280);
+    font-weight: 500;
+  }
+
+  .product-description {
+    color: var(--text-body, #6b7280);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature-pill {
+    background: #f8fafc;
+    color: var(--text-body, #6b7280);
+    padding: 0.375rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+  }
+
+  .product-card:hover .feature-pill {
+    background: rgba(67, 56, 202, 0.1);
+    color: #4338ca;
+    border-color: rgba(67, 56, 202, 0.2);
+  }
+
+  .product-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #4338ca, #6366f1);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 8px rgba(67, 56, 202, 0.25);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(67, 56, 202, 0.35);
+  }
+
+  .btn-primary svg {
+    transition: transform 0.2s ease;
+  }
+
+  .btn-primary:hover svg {
+    transform: translate(2px, -2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-body, #6b7280);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-secondary:hover {
+    background: #f8fafc;
+    color: var(--heading-color, #1f2937);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Animasi Fade Sederhana */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .products-section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .product-card {
+      padding: 1.5rem;
+    }
+
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .product-actions {
+      flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Nonaktifkan animasi kompleks di mobile untuk performa */
+    .product-card {
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .product-card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .products-section {
+      padding: 3rem 0;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      padding: 1.25rem;
+      /* Animasi minimal untuk mobile */
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .product-logo {
+      width: 40px;
+      height: 40px;
+    }
+
+    .feature-pill {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.625rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+  }
+
+  /* Prefers-reduced-motion untuk aksesibilitas */
+  @media (prefers-reduced-motion: reduce) {
+    .product-card,
+    .products-section {
+      animation: none;
+    }
+
+    .product-card:hover {
+      transform: none;
+    }
+
+    .btn-primary:hover {
+      transform: none;
+    }
+  }
+</style>
+<script src="/src/components/js/product.js"></script>

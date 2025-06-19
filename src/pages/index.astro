@@ -1,30 +1,26 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import HeroSection from "../components/HeroSection.astro";
-import FeaturedSection from "../components/FeaturedSection.astro";
-import ClientSection from "../components/ClientSection.astro";
-import ExperiencesSection from "../components/ExperiencesSection.astro";
-import PortfolioSection from "../components/PortfolioSection.astro";
-import ContactFormSection from "../components/ContactFormSection.astro"
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import BlogSection from "../components/BlogSection.astro";
-import AboutSection from "../components/AboutSection.astro";
-import NextIsoSection from "../components/NextIsoSection.astro";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import FeaturedSection from '../components/FeaturedSection.astro';
+import ClientSection from '../components/ClientSection.astro';
+import ExperiencesSection from '../components/ExperiencesSection.astro';
+import PortfolioSection from '../components/PortfolioSection.astro';
+import ContactFormSection from '../components/ContactFormSection.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BlogSection from '../components/BlogSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import NextIsoSection from '../components/NextIsoSection.astro';
 import { ClientRouter } from 'astro:transitions';
-import Timeline from "../components/Timeline.astro";
-import CTASection from "../components/CTASection.astro";
-
-
+import Timeline from '../components/Timeline.astro';
+import CTASection from '../components/CTASection.astro';
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-
-
   </head>
 
   <body>
@@ -33,8 +29,9 @@ import CTASection from "../components/CTASection.astro";
     <HeroSection />
     <FeaturedSection />
     <AboutSection />
-     <NextIsoSection />
-     <CTASection />
+    <ClientSection />
+    <NextIsoSection />
+    <CTASection />
     <!--
     <Timeline/>
     <ContactFormSection />  -->
@@ -42,10 +39,9 @@ import CTASection from "../components/CTASection.astro";
 
     <ExperiencesSection />
 
-    <ClientSection />
+
 
     <ContactFormSection /> -->
     <Footer />
-
   </body>
 </html>

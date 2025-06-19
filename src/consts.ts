@@ -8,3 +8,6 @@ export const SITE_DESCRIPTION_CONTACT = 'Contact Us for technical management ser
 
 export const SITE_TITLE_BLOG = 'QIFESS Blog';
 export const SITE_DESCRIPTION_BLOG = 'Stay updated with the latest news and insights from QIFESS.';
+export const SITE_TITLE_PRODUCT = 'Our Products - Qualita Indonesia';
+export const SITE_DESCRIPTION_PRODUCT =
+  'Explore our range of products designed to meet your technical management needs. From field technician services to specialized equipment, we offer solutions that ensure reliability and efficiency.';

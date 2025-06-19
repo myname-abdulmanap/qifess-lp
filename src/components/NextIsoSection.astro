@@ -4,18 +4,34 @@
 
 <section class="services-section">
   <div class="container">
+    <!-- Header -->
     <div class="services-header">
-      <h2 class="animate-element fade-up">Who need QIFESS?</h2>
-      <p class="animate-element fade-up">
+      <h2 class="animate-element">Who need QIFESS?</h2>
+      <p class="animate-element">
         QIFESS serves various industries and stakeholders with comprehensive solutions for field
         service management and operational excellence
       </p>
     </div>
 
-    <!-- Target Industries -->
-    <div class="target-industries animate-element fade-in-up">
-      <div class="industry-grid">
-        <div class="industry-card">
+    <!-- Main Content -->
+    <div class="main-content animate-element">
+      <!-- App Preview Space -->
+      <div class="app-preview">
+        <div class="app-placeholder">
+
+          <img
+            src="/assets/img/qifess-mock.png"
+            alt="QIFESS App Preview"
+            class="app-preview-image"
+            width="300"
+            height="500"
+          />
+        </div>
+      </div>
+
+      <!-- Target Industries -->
+      <div class="industries">
+        <div class="industry-item">
           <div class="industry-icon blue">
             <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
@@ -31,10 +47,10 @@
                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
           </div>
-          <span>Field Service</span>
+          <span>Field Service Company</span>
         </div>
 
-        <div class="industry-card">
+        <div class="industry-item">
           <div class="industry-icon red">
             <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
@@ -48,7 +64,7 @@
           <span>Network/ICT Service</span>
         </div>
 
-        <div class="industry-card">
+        <div class="industry-item">
           <div class="industry-icon yellow">
             <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
@@ -62,7 +78,7 @@
           <span>Surveyor</span>
         </div>
 
-        <div class="industry-card">
+        <div class="industry-item">
           <div class="industry-icon green">
             <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
@@ -79,7 +95,7 @@
     </div>
 
     <!-- Benefits Section -->
-    <div class="benefits-section animate-element fade-in-up">
+    <div class="benefits-section animate-element">
       <div class="benefit-card">
         <div class="benefit-header">
           <div class="benefit-icon customer">
@@ -149,22 +165,17 @@
 </section>
 
 <script>
-  // Intersection Observer for animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px',
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-        if (entry.target.querySelector('h2')) {
-          entry.target.querySelector('h2').classList.add('animate');
+  // Simple animation observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
         }
-      }
-    });
-  }, observerOptions);
+      });
+    },
+    { threshold: 0.1 }
+  );
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.animate-element').forEach((el) => {
@@ -207,15 +218,10 @@
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 0;
+    width: 60px;
     height: 3px;
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     border-radius: 2px;
-    transition: width 0.6s ease;
-  }
-
-  .services-header h2.animate::after {
-    width: 60px;
   }
 
   .services-header p {
@@ -227,35 +233,76 @@
     opacity: 0.9;
   }
 
-  /* Industry Grid */
-  .target-industries {
+  /* Main Content Layout */
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
     margin-bottom: 3rem;
   }
 
-  .industry-grid {
+  /* App Preview */
+  .app-preview {
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    background: linear-gradient(135deg, var(--bg-color), var(--accent-color));
+    border-radius: 20px;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .industry-card {
+  .app-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  }
+
+  .app-placeholder {
+    color: white;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+  }
+
+  .app-placeholder h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .app-placeholder p {
+    opacity: 0.7;
+  }
+
+  /* Industries */
+  .industries {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .industry-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     background: var(--color-card);
-    padding: 1rem 1.25rem;
-    border-radius: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    min-width: 180px;
   }
 
-  .industry-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  .industry-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
   .industry-icon {
@@ -264,14 +311,9 @@
     justify-content: center;
     width: 36px;
     height: 36px;
-    border-radius: 50%;
+    border-radius: 8px;
     color: white;
-    transition: transform 0.3s ease;
     flex-shrink: 0;
-  }
-
-  .industry-card:hover .industry-icon {
-    transform: scale(1.1) rotate(5deg);
   }
 
   .industry-icon.blue {
@@ -287,20 +329,17 @@
     background: linear-gradient(135deg, #10b981, #059669);
   }
 
-  .industry-card span {
+  .industry-item span {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-color);
-    white-space: nowrap;
   }
 
   /* Benefits Section */
   .benefits-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto;
   }
 
   .benefit-card {
@@ -322,16 +361,11 @@
     width: 100%;
     height: 3px;
     background: var(--card-accent);
-    transition: height 0.3s ease;
   }
 
   .benefit-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  }
-
-  .benefit-card:hover::before {
-    height: 4px;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   }
 
   .benefit-header {
@@ -349,21 +383,14 @@
     height: 40px;
     border-radius: 8px;
     color: white;
-    transition: transform 0.3s ease;
-  }
-
-  .benefit-card:hover .benefit-icon {
-    transform: scale(1.1);
   }
 
   .benefit-icon.customer {
     background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   }
-
   .benefit-icon.employee {
     background: linear-gradient(135deg, #10b981, #059669);
   }
-
   .benefit-icon.company {
     background: linear-gradient(135deg, #ef4444, #dc2626);
   }
@@ -397,7 +424,6 @@
     font-size: 0.9rem;
     position: relative;
     padding-left: 1.25rem;
-    transition: color 0.3s ease;
     opacity: 0.9;
   }
 
@@ -410,17 +436,11 @@
     font-size: 1rem;
   }
 
-  .benefit-card:hover .benefit-list li {
-    opacity: 1;
-  }
-
-  /* Animations */
+  /* Simple Animations */
   .animate-element {
     opacity: 0;
-    transform: translateY(30px);
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
   }
 
   .animate-element.animate {
@@ -428,46 +448,28 @@
     transform: translateY(0);
   }
 
-  .fade-up {
-    transform: translateY(40px);
-  }
-  .fade-in-up {
-    transform: translateY(25px);
-  }
-
-  .benefit-card:nth-child(1).animate {
-    transition-delay: 0.1s;
-  }
-  .benefit-card:nth-child(2).animate {
-    transition-delay: 0.2s;
-  }
-  .benefit-card:nth-child(3).animate {
-    transition-delay: 0.3s;
-  }
-
   /* Responsive */
   @media (max-width: 768px) {
-    .services-section {
-      padding: 3rem 0;
+    .main-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
-    .services-header h2 {
-      font-size: 1.8rem;
+
+    .industries {
+      grid-template-columns: 1fr;
     }
-    .services-header {
-      margin-bottom: 2.5rem;
-    }
-    .target-industries {
-      margin-bottom: 2.5rem;
-    }
-    .industry-grid {
-      gap: 1rem;
-    }
-    .industry-card {
-      min-width: 160px;
-    }
+
     .benefits-section {
       grid-template-columns: 1fr;
       gap: 1.25rem;
+    }
+
+    .services-header h2 {
+      font-size: 1.8rem;
+    }
+
+    .app-preview {
+      min-height: 250px;
     }
   }
 
@@ -475,22 +477,13 @@
     .services-section {
       padding: 2.5rem 0;
     }
-    .services-header h2 {
-      font-size: 1.6rem;
-    }
-    .industry-grid {
-      flex-direction: column;
-      align-items: center;
-    }
-    .industry-card {
-      width: 100%;
-      max-width: 220px;
-    }
+
     .benefit-card {
       padding: 1.25rem;
     }
-    .benefit-header {
-      gap: 0.5rem;
+
+    .services-header h2 {
+      font-size: 1.6rem;
     }
   }
 </style>
