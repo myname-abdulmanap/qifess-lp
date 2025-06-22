@@ -745,17 +745,26 @@
 </style>
 
 <script>
-  // FAQ Accordion Functionality
-  document.addEventListener('DOMContentLoaded', function () {
+  // FAQ Accordion Functionality dengan View Transitions Support
+  function initFAQ() {
     const faqQuestions = document.querySelectorAll('.faq-question');
 
+    // Remove existing event listeners to prevent duplicates
     faqQuestions.forEach((question) => {
+      const newQuestion = question.cloneNode(true);
+      question.parentNode.replaceChild(newQuestion, question);
+    });
+
+    // Get updated questions after cloning
+    const updatedFaqQuestions = document.querySelectorAll('.faq-question');
+
+    updatedFaqQuestions.forEach((question) => {
       question.addEventListener('click', function () {
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         const answer = this.nextElementSibling;
 
         // Close all other FAQs
-        faqQuestions.forEach((otherQuestion) => {
+        updatedFaqQuestions.forEach((otherQuestion) => {
           if (otherQuestion !== this) {
             otherQuestion.setAttribute('aria-expanded', 'false');
             otherQuestion.nextElementSibling.classList.remove('active');
@@ -786,5 +795,14 @@
         }
       });
     });
-  });
+  }
+
+  // Initialize on DOM content loaded
+  document.addEventListener('DOMContentLoaded', initFAQ);
+
+  // Re-initialize after view transitions
+  document.addEventListener('astro:after-swap', initFAQ);
+
+  // Alternative: also handle astro:page-load for additional safety
+  document.addEventListener('astro:page-load', initFAQ);
 </script>
