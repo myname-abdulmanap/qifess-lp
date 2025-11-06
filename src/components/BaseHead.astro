@@ -1,8 +1,8 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
-import { SITE_TITLE } from '../consts';
+import "../styles/global.css";
+import { SITE_TITLE } from "../consts";
 
 interface Props {
   title: string;
@@ -12,25 +12,41 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/assets/img/banner.jpg' } = Astro.props;
+const { title, description, image = "/assets/img/banner.jpg" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="https://app.qifess.com/favicon.ico" />
+<link
+  rel="icon"
+  type="image/svg+xml"
+  href="https://app.qifess.com/favicon.ico"
+/>
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
   rel="alternate"
   type="application/rss+xml"
   title={SITE_TITLE}
-  href={new URL('rss.xml', Astro.site)}
+  href={new URL("rss.xml", Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<link
+  rel="preload"
+  href="/fonts/atkinson-regular.woff"
+  as="font"
+  type="font/woff"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/atkinson-bold.woff"
+  as="font"
+  type="font/woff"
+  crossorigin
+/>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -60,17 +76,29 @@ const { title, description, image = '/assets/img/banner.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta
+  name="google-site-verification"
+  content="s1zKCQiFyvZ-vlOrR5JiZqy-x9ASX49HEJWuk96YB8o"
+/>
 
 <!-- Target Indonesian Audience -->
 <link rel="alternate" href="https://qifess.com" hreflang="id-ID" />
 <meta name="geo.region" content="ID" />
 <meta name="geo.placename" content="Indonesia" />
-<script defer data-domain="qifess.com" src="https://analytics.qualita-indonesia.web.id/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<script
+  defer
+  data-domain="qifess.com"
+  src="https://analytics.qualita-indonesia.web.id/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+></script>
+<script>
+  window.plausible =
+    window.plausible ||
+    function () {
+      (window.plausible.q = window.plausible.q || []).push(arguments);
+    };
+</script>
 <script
   src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
   type="module"></script>
-<script defer data-domain="qifess.com" src="https://plausible.io/js/script.js"></script>
-
-<meta name="google-site-verification" content="s1zKCQiFyvZ-vlOrR5JiZqy-x9ASX49HEJWuk96YB8o" />
-
+<script defer data-domain="qifess.com" src="https://plausible.io/js/script.js"
+></script>
