@@ -10,7 +10,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://protectcube.vercel.app',
+  site: 'https://qifess.com',
   integrations: [mdx(), sitemap()], 
   adapter: vercel(),
   vite: {
